@@ -34,13 +34,13 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" 
-                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
-                DeleteCommand="DELETE FROM [PathInfo] WHERE [Id] = @original_Id AND [StuID] = @original_StuID AND [Progect] = @original_Progect AND [Path] = @original_Path AND [Date] = @original_Date AND [Remark] = @original_Remark" 
-                InsertCommand="INSERT INTO PathInfo (Id, StuID, Progect, Path, Date, Remark) VALUES (?, ?, ?, ?, ?, ?)" 
-                OldValuesParameterFormatString="original_{0}" 
-                SelectCommand="SELECT * FROM patientinfo" 
-                UpdateCommand="UPDATE PathInfo SET StuID = ?, Progect = ?, Path = ?, Date = ?, Remark = ? WHERE ( Id =? ) " 
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues"
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
+                DeleteCommand="DELETE FROM [PathInfo] WHERE [Id] = @original_Id AND [StuID] = @original_StuID AND [Progect] = @original_Progect AND [Path] = @original_Path AND [Date] = @original_Date AND [Remark] = @original_Remark"
+                InsertCommand="INSERT INTO PathInfo (Id, StuID, Progect, Path, Date, Remark) VALUES (?, ?, ?, ?, ?, ?)"
+                OldValuesParameterFormatString="original_{0}"
+                SelectCommand="SELECT * FROM patientinfo"
+                UpdateCommand="UPDATE PathInfo SET StuID = ?, Progect = ?, Path = ?, Date = ?, Remark = ? WHERE ( Id =? ) "
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />

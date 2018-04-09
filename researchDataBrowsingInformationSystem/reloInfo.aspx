@@ -9,7 +9,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <script language=javascript>
+    <script language="javascript">
         function onGrid1ButtonClick(s, e) {
 
             switch (e.buttonID) {
@@ -27,8 +27,8 @@
 
                     break;
 
-                　　　　　　　　　　　case "Button3": break;
-                           default:
+                case "Button3": break;
+                default:
                     e.processOnServer = true;
                     break;
             }
@@ -38,23 +38,23 @@
 <body>
     <div style="margin-left: 21%">
         <form id="form1" runat="server">
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" DataSourceID="SqlDataSource1" KeyFieldName="Id" Theme="Default" AutoGenerateColumns="False" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
+            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
-                <SettingsSearchPanel Visible="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
+                <SettingsSearchPanel Visible="True" />
                 <Columns>
-                    <dx:GridViewCommandColumn VisibleIndex="6" Caption="操作" ButtonRenderMode="Button">
+                    <dx:GridViewCommandColumn Caption="操作" ShowClearFilterButton="True" ShowInCustomizationForm="True" VisibleIndex="6">
                         <CustomButtons>
+                            <dx:GridViewCommandColumnCustomButton ID="New" Text="新建" Visibility="FilterRow">
+                            </dx:GridViewCommandColumnCustomButton>
                             <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">
                             </dx:GridViewCommandColumnCustomButton>
                             <dx:GridViewCommandColumnCustomButton ID="Delete" Text="删除">
                             </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="New" Text="新建" Visibility="FilterRow">
-                            </dx:GridViewCommandColumnCustomButton>
                         </CustomButtons>
                     </dx:GridViewCommandColumn>
                     <dx:GridViewDataComboBoxColumn FieldName="Role" VisibleIndex="3" Caption="用户角色" Width="80px">
-                        <EditFormSettings VisibleIndex="4" Visible="True" Caption="用户角色" />
+                        <EditFormSettings VisibleIndex="3" Visible="True" Caption="用户角色" />
                         <CellStyle HorizontalAlign="Center" />
                         <HeaderStyle HorizontalAlign="Center" />
                         <PropertiesComboBox>
@@ -65,7 +65,7 @@
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
                     <dx:GridViewDataComboBoxColumn FieldName="Right" VisibleIndex="4" Caption="用户权限" Width="80px">
-                        <EditFormSettings VisibleIndex="4" Visible="True" Caption="用户角色" />
+                        <EditFormSettings VisibleIndex="4" Visible="True" Caption="用户权限" />
                         <CellStyle HorizontalAlign="Center" />
                         <HeaderStyle HorizontalAlign="Center" />
                         <PropertiesComboBox>
@@ -73,6 +73,7 @@
                                 <dx:ListEditItem Text="1" Value="1" />
                                 <dx:ListEditItem Text="2" Value="2" />
                                 <dx:ListEditItem Text="3" Value="3" />
+                                <dx:ListEditItem Text="4" Value="4" />
                             </Items>
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
@@ -82,24 +83,29 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="用户密码" FieldName="Psd" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
+                  <%--  <dx:GridViewDataTextColumn Caption="用户角色" FieldName="Role" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>
+                    <dx:GridViewDataTextColumn Caption="用户权限" FieldName="Right" VisibleIndex="4">
+                    </dx:GridViewDataTextColumn>--%>
                     <dx:GridViewDataTextColumn Caption="备注信息" FieldName="Remark" VisibleIndex="5">
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
-                ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
-                DeleteCommand="DELETE FROM roleinfo WHERE (Id = ?)"
-                InsertCommand="INSERT INTO roleinfo(Id, Name, Psd, Role, `Right`, Remark) VALUES (?, ?, ?, ?, ?, ?)"
-                ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
-                SelectCommand="SELECT * FROM roleinfo"
-                UpdateCommand="UPDATE roleinfo SET Id = ?, Name = ?, Psd = ?, Role = ?, `Right` = ?, Remark = ? WHERE (Id = ?)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
+                DeleteCommand="DELETE FROM roleInfo WHERE (Id = ?)" 
+                InsertCommand="INSERT INTO roleInfo (Id, Name, Psd, Role, `Right`, Remark) VALUES (?, ?, ?, ?, ?, ?)" 
+                SelectCommand="SELECT * FROM roleInfo" 
+                UpdateCommand="UPDATE roleInfo SET Name = ?, Psd = ?, Role = ?, `Right` = ?, Remark = ? WHERE (Id=?)" 
+                ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}" 
+                ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
-                    <asp:Parameter Name="Id" Type="String" />
-                    <asp:Parameter Name="Name" Type="String" />
-                    <asp:Parameter Name="Psd" Type="String" />
-                    <asp:Parameter Name="Role" Type="Int32" />
-                    <asp:Parameter Name="Right" Type="Int32" />
-                    <asp:Parameter Name="Remark" Type="String" />
+                    <asp:Parameter Name="original_Id" Type="String" />
+                    <asp:Parameter Name="original_Name" Type="String" />
+                    <asp:Parameter Name="original_Psd" Type="String" />
+                    <asp:Parameter Name="original_Role" Type="Int32" />
+                    <asp:Parameter Name="original_Right" Type="Int32" />
+                    <asp:Parameter Name="original_Remark" Type="String" />
                 </DeleteParameters>
                 <InsertParameters>
                     <asp:Parameter Name="Id" Type="String" />
@@ -110,7 +116,7 @@
                     <asp:Parameter Name="Remark" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="Id" Type="String" />
+                    <%--<asp:Parameter Name="Id" Type="String" />--%>
                     <asp:Parameter Name="Name" Type="String" />
                     <asp:Parameter Name="Psd" Type="String" />
                     <asp:Parameter Name="Role" Type="Int32" />

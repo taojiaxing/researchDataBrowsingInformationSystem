@@ -8,7 +8,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <script language=javascript>
+    <script language="javascript">
         function onGrid1ButtonClick(s, e) {
 
             switch (e.buttonID) {
@@ -26,8 +26,8 @@
 
                     break;
 
-                　　　　　　　　　　　case "Button3": break;
-                           default:
+                case "Button3": break;
+                default:
                     e.processOnServer = true;
                     break;
             }
@@ -44,6 +44,8 @@
                 <Columns>
                     <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="8" Caption="操作">
                         <CustomButtons>
+                            <dx:GridViewCommandColumnCustomButton ID="View" Text="查看">
+                            </dx:GridViewCommandColumnCustomButton>
                             <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">
                             </dx:GridViewCommandColumnCustomButton>
                             <dx:GridViewCommandColumnCustomButton ID="Delete" Text="删除">
@@ -69,7 +71,7 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="病人姓名" FieldName="Name" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
-               <%--     <dx:GridViewDataTextColumn Caption="病人性别" FieldName="Sex" VisibleIndex="3">
+                    <%--     <dx:GridViewDataTextColumn Caption="病人性别" FieldName="Sex" VisibleIndex="3">
                     </dx:GridViewDataTextColumn>--%>
                     <dx:GridViewDataTextColumn Caption="病人身高" FieldName="Height" VisibleIndex="4">
                     </dx:GridViewDataTextColumn>
@@ -81,7 +83,15 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:testConnectionString %>" DeleteCommand="DELETE FROM PatientInfo WHERE (Id =?) " InsertCommand="INSERT INTO PatientInfo (Id, DoctorID, Name, Sex, Height, Weitght, BirthDate, Remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM patientinfo" UpdateCommand="UPDATE PatientInfo SET DoctorID = ?, Name = ?, Sex = ?, Height = ?, Weitght = ?, BirthDate = ?, Remark = ? WHERE (Id = ?)" ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConflictDetection="CompareAllValues" 
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
+                DeleteCommand="DELETE FROM PatientInfo WHERE (Id =?) " 
+                InsertCommand="INSERT INTO PatientInfo (Id, DoctorID, Name, Sex, Height, Weitght, BirthDate, Remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" 
+                OldValuesParameterFormatString="original_{0}" 
+                SelectCommand="SELECT * FROM patientinfo" 
+                UpdateCommand="UPDATE PatientInfo SET DoctorID = ?, Name = ?, Sex = ?, Height = ?, Weitght = ?, BirthDate = ?, Remark = ? WHERE (Id = ?)" 
+                ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_DoctorID" Type="String" />

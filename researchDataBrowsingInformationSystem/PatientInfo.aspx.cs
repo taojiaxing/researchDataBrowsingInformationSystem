@@ -12,6 +12,7 @@ namespace researchDataBrowsingInformationSystem
                 Response.Redirect("default.aspx");
             }
         }
+
         protected void ASPxGridView1_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
         {
             String id = e.ButtonID;
@@ -28,8 +29,10 @@ namespace researchDataBrowsingInformationSystem
                 case "New":
                     this.ASPxGridView1.AddNewRow();
                     break;
+                case "View":
+                    Response.Write("<script>window.opener.location.replace('CheckInfo.aspx');self.close();</script>");
+                    break;
             }
         }
-
     }
 }
