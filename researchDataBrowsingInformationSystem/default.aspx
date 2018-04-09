@@ -10,9 +10,11 @@
         .auto-style1 {
             width: 55%;
         }
-        #mainIfr{
-            left:30%;
+
+        #mainIfr {
+            left: 30%;
         }
+
         #mainIfr {
             margin-top: 0px;
         }
@@ -43,8 +45,8 @@
         </form>
     </div>
     <!--表内容-->
-    <div id ="main">
-        <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="720px"  src=""></iframe>
+    <div id="main">
+        <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="720px" src=""></iframe>
     </div>
 </body>
 </html>

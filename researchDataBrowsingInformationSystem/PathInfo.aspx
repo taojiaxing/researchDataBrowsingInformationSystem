@@ -18,7 +18,7 @@
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <SettingsSearchPanel Visible="True" />
                 <Columns>
-                    <dx:GridViewCommandColumn SelectAllCheckboxMode="Page" ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" ShowSelectCheckbox="True" VisibleIndex="0">
+                    <dx:GridViewCommandColumn VisibleIndex="0">
                     </dx:GridViewCommandColumn>
                     <dx:GridViewDataTextColumn Caption="病人ID号" FieldName="Id" VisibleIndex="1">
                     </dx:GridViewDataTextColumn>
@@ -34,7 +34,14 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:testConnectionString %>" DeleteCommand="DELETE FROM [PathInfo] WHERE [Id] = @original_Id AND [StuID] = @original_StuID AND [Progect] = @original_Progect AND [Path] = @original_Path AND [Date] = @original_Date AND [Remark] = @original_Remark" InsertCommand="INSERT INTO [PathInfo] ([Id], [StuID], [Progect], [Path], [Date], [Remark]) VALUES (@Id, @StuID, @Progect, @Path, @Date, @Remark)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [PathInfo]" UpdateCommand="UPDATE [PathInfo] SET [StuID] = @StuID, [Progect] = @Progect, [Path] = @Path, [Date] = @Date, [Remark] = @Remark WHERE [Id] = @original_Id AND [StuID] = @original_StuID AND [Progect] = @original_Progect AND [Path] = @original_Path AND [Date] = @original_Date AND [Remark] = @original_Remark">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" 
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
+                DeleteCommand="DELETE FROM [PathInfo] WHERE [Id] = @original_Id AND [StuID] = @original_StuID AND [Progect] = @original_Progect AND [Path] = @original_Path AND [Date] = @original_Date AND [Remark] = @original_Remark" 
+                InsertCommand="INSERT INTO PathInfo (Id, StuID, Progect, Path, Date, Remark) VALUES (?, ?, ?, ?, ?, ?)" 
+                OldValuesParameterFormatString="original_{0}" 
+                SelectCommand="SELECT * FROM patientinfo" 
+                UpdateCommand="UPDATE PathInfo SET StuID = ?, Progect = ?, Path = ?, Date = ?, Remark = ? WHERE ( Id =? ) " 
+                ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_StuID" Type="String" />

@@ -9,7 +9,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <%--<script language=javascript>
+    <script language=javascript>
         function onGrid1ButtonClick(s, e) {
 
             switch (e.buttonID) {
@@ -28,10 +28,12 @@
                     break;
 
                 　　　　　　　　　　　case "Button3": break;
-                default: break;
+                           default:
+                    e.processOnServer = true;
+                    break;
             }
         }
-    </script>--%>
+    </script>
 </head>
 <body>
     <div style="margin-left: 21%">
@@ -39,6 +41,7 @@
             <dx:ASPxGridView ID="ASPxGridView1" runat="server" DataSourceID="SqlDataSource1" KeyFieldName="Id" Theme="Default" AutoGenerateColumns="False" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <SettingsSearchPanel Visible="True" />
+                <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <Columns>
                     <dx:GridViewCommandColumn VisibleIndex="6" Caption="操作" ButtonRenderMode="Button">
                         <CustomButtons>
@@ -73,16 +76,6 @@
                             </Items>
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
-                    <dx:GridViewDataDateColumn FieldName="CreateTime" VisibleIndex="7" Caption="创建时间" Width="100px" Visible="false">
-                        <editformsettings visibleindex="5" visible="False" caption="创建时间" />
-                    <cellstyle horizontalalign="Center" />
-                    <headerstyle horizontalalign="Center" />
-                    </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataDateColumn FieldName="ModifyTime" VisibleIndex="8" Caption="修改时间" Width="100px" Visible="false">
-                        <EditFormSettings VisibleIndex="5" Visible="True" Caption="修改时间" />
-                        <CellStyle HorizontalAlign="Center" />
-                        <HeaderStyle HorizontalAlign="Center" />
-                    </dx:GridViewDataDateColumn>
                     <dx:GridViewDataTextColumn Caption="用户ID号" FieldName="Id" VisibleIndex="0">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="用户姓名" FieldName="Name" VisibleIndex="1">
@@ -99,7 +92,7 @@
                 InsertCommand="INSERT INTO roleinfo(Id, Name, Psd, Role, `Right`, Remark) VALUES (?, ?, ?, ?, ?, ?)"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
                 SelectCommand="SELECT * FROM roleinfo"
-                UpdateCommand="UPDATE roleinfo SET Id = ?, Name = ?, Psd = ?, Role = ?, `Right` = ?, Remark = WHERE (Id = ?)">
+                UpdateCommand="UPDATE roleinfo SET Id = ?, Name = ?, Psd = ?, Role = ?, `Right` = ?, Remark = ? WHERE (Id = ?)">
                 <DeleteParameters>
                     <asp:Parameter Name="Id" Type="String" />
                     <asp:Parameter Name="Name" Type="String" />
@@ -117,6 +110,7 @@
                     <asp:Parameter Name="Remark" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
+                    <asp:Parameter Name="Id" Type="String" />
                     <asp:Parameter Name="Name" Type="String" />
                     <asp:Parameter Name="Psd" Type="String" />
                     <asp:Parameter Name="Role" Type="Int32" />

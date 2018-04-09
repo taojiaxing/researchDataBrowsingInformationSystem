@@ -8,35 +8,80 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <script language=javascript>
+        function onGrid1ButtonClick(s, e) {
+
+            switch (e.buttonID) {
+                case "Delete":
+                    // 用于操作前确认
+                    if (confirm("确定要执行这个操作么？"))
+                        e.processOnServer = true;
+                    break;
+
+                case "Button2":
+                    // 可以定义相关事件
+                    if (someEvent) // 或者 !typeof(someEvent) === 'undefined'
+                        someEvent.call();
+                    //someEvent.apply(context, arguments); 可以传入指定的context
+
+                    break;
+
+                　　　　　　　　　　　case "Button3": break;
+                           default:
+                    e.processOnServer = true;
+                    break;
+            }
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="margin-left:14%">
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id">
+        <div style="margin-left: 14%">
+            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <SettingsSearchPanel Visible="True" />
+                <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <Columns>
-                    <dx:GridViewCommandColumn SelectAllCheckboxMode="Page" ShowClearFilterButton="True" ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" ShowSelectCheckbox="True" VisibleIndex="0">
+                    <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="8" Caption="操作">
+                        <CustomButtons>
+                            <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">
+                            </dx:GridViewCommandColumnCustomButton>
+                            <dx:GridViewCommandColumnCustomButton ID="Delete" Text="删除">
+                            </dx:GridViewCommandColumnCustomButton>
+                            <dx:GridViewCommandColumnCustomButton ID="New" Text="新建" Visibility="FilterRow">
+                            </dx:GridViewCommandColumnCustomButton>
+                        </CustomButtons>
                     </dx:GridViewCommandColumn>
-                    <dx:GridViewDataTextColumn Caption="病人ID号" FieldName="Id" ReadOnly="false" VisibleIndex="1">
+                    <dx:GridViewDataComboBoxColumn FieldName="Sex" VisibleIndex="3" Caption="病人性别" Width="80px">
+                        <EditFormSettings VisibleIndex="3" Visible="True" Caption="病人性别" />
+                        <CellStyle HorizontalAlign="Center" />
+                        <HeaderStyle HorizontalAlign="Center" />
+                        <PropertiesComboBox>
+                            <Items>
+                                <dx:ListEditItem Text="男" Value="男" />
+                                <dx:ListEditItem Text="女" Value="女" />
+                            </Items>
+                        </PropertiesComboBox>
+                    </dx:GridViewDataComboBoxColumn>
+                    <dx:GridViewDataTextColumn Caption="病人ID号" FieldName="Id" ReadOnly="false" VisibleIndex="0">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="科研医生编号" FieldName="DoctorID" VisibleIndex="2">
+                    <dx:GridViewDataTextColumn Caption="科研医生编号" FieldName="DoctorID" VisibleIndex="1">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="病人姓名" FieldName="Name" VisibleIndex="3">
+                    <dx:GridViewDataTextColumn Caption="病人姓名" FieldName="Name" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="病人性别" FieldName="Sex" VisibleIndex="4">
+               <%--     <dx:GridViewDataTextColumn Caption="病人性别" FieldName="Sex" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>--%>
+                    <dx:GridViewDataTextColumn Caption="病人身高" FieldName="Height" VisibleIndex="4">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="病人身高" FieldName="Height" VisibleIndex="5">
+                    <dx:GridViewDataTextColumn Caption="病人体重" FieldName="Weitght" VisibleIndex="5">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="病人体重" FieldName="Weitght" VisibleIndex="6">
-                    </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn Caption="病人出生时间" FieldName="BirthDate" VisibleIndex="7">
+                    <dx:GridViewDataDateColumn Caption="病人出生时间" FieldName="BirthDate" VisibleIndex="6">
                     </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn Caption="备注信息" FieldName="Remark" VisibleIndex="8">
+                    <dx:GridViewDataTextColumn Caption="备注信息" FieldName="Remark" VisibleIndex="7">
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:testConnectionString %>" DeleteCommand="DELETE FROM [PatientInfo] WHERE [Id] = @original_Id AND [DoctorID] = @original_DoctorID AND [Name] = @original_Name AND [Sex] = @original_Sex AND [Height] = @original_Height AND [Weitght] = @original_Weitght AND [BirthDate] = @original_BirthDate AND [Remark] = @original_Remark" InsertCommand="INSERT INTO [PatientInfo] ([Id], [DoctorID], [Name], [Sex], [Height], [Weitght], [BirthDate], [Remark]) VALUES (@Id, @DoctorID, @Name, @Sex, @Height, @Weitght, @BirthDate, @Remark)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [PatientInfo]" UpdateCommand="UPDATE [PatientInfo] SET [DoctorID] = @DoctorID, [Name] = @Name, [Sex] = @Sex, [Height] = @Height, [Weitght] = @Weitght, [BirthDate] = @BirthDate, [Remark] = @Remark WHERE [Id] = @original_Id AND [DoctorID] = @original_DoctorID AND [Name] = @original_Name AND [Sex] = @original_Sex AND [Height] = @original_Height AND [Weitght] = @original_Weitght AND [BirthDate] = @original_BirthDate AND [Remark] = @original_Remark">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:testConnectionString %>" DeleteCommand="DELETE FROM PatientInfo WHERE (Id =?) " InsertCommand="INSERT INTO PatientInfo (Id, DoctorID, Name, Sex, Height, Weitght, BirthDate, Remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM patientinfo" UpdateCommand="UPDATE PatientInfo SET DoctorID = ?, Name = ?, Sex = ?, Height = ?, Weitght = ?, BirthDate = ?, Remark = ? WHERE (Id = ?)" ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_DoctorID" Type="String" />
