@@ -40,7 +40,7 @@
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <SettingsSearchPanel Visible="True" />
                 <Columns>
-                    <dx:GridViewCommandColumn VisibleIndex="6" Caption="操作" ButtonRenderMode="Button" ShowDeleteButton="True">
+                    <dx:GridViewCommandColumn VisibleIndex="6" Caption="操作" ButtonRenderMode="Button">
                         <CustomButtons>
                             <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">
                             </dx:GridViewCommandColumnCustomButton>
