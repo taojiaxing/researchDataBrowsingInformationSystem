@@ -36,7 +36,7 @@
     </script>
 </head>
 <body>
-    <div style="margin-left: 21%">
+    <div style="margin-left: 20.5%">
         <form id="form1" runat="server">
             <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />

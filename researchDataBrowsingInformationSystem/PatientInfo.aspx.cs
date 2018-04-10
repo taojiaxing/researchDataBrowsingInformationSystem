@@ -30,7 +30,7 @@ namespace researchDataBrowsingInformationSystem
                     this.ASPxGridView1.AddNewRow();
                     break;
                 case "View":
-                    Response.Write("<script>window.opener.location.replace('CheckInfo.aspx');self.close();</script>");
+                    //this.Response.Write("<Script>window.open('CheckInfo.aspx','','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=750,height=470,left=80,top=40');</script>");
                     break;
             }
         }

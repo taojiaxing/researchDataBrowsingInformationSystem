@@ -18,12 +18,9 @@
                         e.processOnServer = true;
                     break;
 
-                case "Button2":
-                    // 可以定义相关事件
-                    if (someEvent) // 或者 !typeof(someEvent) === 'undefined'
-                        someEvent.call();
-                    //someEvent.apply(context, arguments); 可以传入指定的context
-
+                case "View":
+                    //window.open('CheckInfo.aspx', '', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=750,height=470,left=80,top=40');
+                    window.showModelessDialog('CheckInfo.aspx', '', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=750,height=470,left=80,top=40');
                     break;
 
                 case "Button3": break;
@@ -83,14 +80,14 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConflictDetection="CompareAllValues" 
-                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
-                DeleteCommand="DELETE FROM PatientInfo WHERE (Id =?) " 
-                InsertCommand="INSERT INTO PatientInfo (Id, DoctorID, Name, Sex, Height, Weitght, BirthDate, Remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" 
-                OldValuesParameterFormatString="original_{0}" 
-                SelectCommand="SELECT * FROM patientinfo" 
-                UpdateCommand="UPDATE PatientInfo SET DoctorID = ?, Name = ?, Sex = ?, Height = ?, Weitght = ?, BirthDate = ?, Remark = ? WHERE (Id = ?)" 
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                ConflictDetection="CompareAllValues"
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
+                DeleteCommand="DELETE FROM PatientInfo WHERE (Id =?) "
+                InsertCommand="INSERT INTO PatientInfo (Id, DoctorID, Name, Sex, Height, Weitght, BirthDate, Remark) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                OldValuesParameterFormatString="original_{0}"
+                SelectCommand="SELECT * FROM patientinfo"
+                UpdateCommand="UPDATE PatientInfo SET DoctorID = ?, Name = ?, Sex = ?, Height = ?, Weitght = ?, BirthDate = ?, Remark = ? WHERE (Id = ?)"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />
