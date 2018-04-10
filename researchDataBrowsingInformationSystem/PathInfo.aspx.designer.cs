@@ -31,6 +31,51 @@ namespace researchDataBrowsingInformationSystem {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
+        /// Basic 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Basic;
+        
+        /// <summary>
+        /// CheckInfo 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton CheckInfo;
+        
+        /// <summary>
+        /// New 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton New;
+        
+        /// <summary>
+        /// Edit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Edit;
+        
+        /// <summary>
+        /// Delete 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Delete;
+        
+        /// <summary>
         /// SqlDataSource1 控件。
         /// </summary>
         /// <remarks>

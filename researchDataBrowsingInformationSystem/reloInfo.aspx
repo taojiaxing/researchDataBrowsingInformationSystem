@@ -59,8 +59,8 @@
                         <HeaderStyle HorizontalAlign="Center" />
                         <PropertiesComboBox>
                             <Items>
-                                <dx:ListEditItem Text="1" Value="1" />
-                                <dx:ListEditItem Text="2" Value="2" />
+                                <dx:ListEditItem Text="管理员" Value="1" />
+                                <dx:ListEditItem Text="科研人员" Value="2" />
                             </Items>
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
@@ -70,10 +70,10 @@
                         <HeaderStyle HorizontalAlign="Center" />
                         <PropertiesComboBox>
                             <Items>
-                                <dx:ListEditItem Text="1" Value="1" />
-                                <dx:ListEditItem Text="2" Value="2" />
-                                <dx:ListEditItem Text="3" Value="3" />
-                                <dx:ListEditItem Text="4" Value="4" />
+                                <dx:ListEditItem Text="具有数据查看下载权限" Value="1" />
+                                <dx:ListEditItem Text="只具有数据查看权限" Value="2" />
+                                <dx:ListEditItem Text="只具有病人基本信息查看权限" Value="3" />
+                                <dx:ListEditItem Text="只具有登陆权限" Value="4" />
                             </Items>
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>

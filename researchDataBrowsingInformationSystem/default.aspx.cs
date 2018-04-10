@@ -82,7 +82,7 @@ namespace researchDataBrowsingInformationSystem
         {
             if (Session["UserName"] != null)
             {
-                mainIfr.Attributes.Add("src", "PatientInfo.aspx");
+                mainIfr.Attributes.Add("src", "PathInfo.aspx");
             }
         }
     }
