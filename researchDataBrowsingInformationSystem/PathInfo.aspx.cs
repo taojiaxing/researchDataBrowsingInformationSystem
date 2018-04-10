@@ -10,7 +10,7 @@ namespace researchDataBrowsingInformationSystem
             if (Session["UserName"] == null)
             {
                 Response.Redirect("default.aspx");
-            }
+             }
         }
         protected void ASPxGridView1_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
         {

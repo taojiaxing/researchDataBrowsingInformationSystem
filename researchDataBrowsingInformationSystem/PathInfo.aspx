@@ -18,12 +18,17 @@
                         e.processOnServer = true;
                     break;
 
-                case "View":
-                    //window.open('CheckInfo.aspx', '', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=750,height=470,left=80,top=40');
-                    window.showModelessDialog('CheckInfo.aspx', '', 'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=750,height=470,left=80,top=40');
+                case "Basic":
+                    var url = 'PatientInfo.aspx';
+                    ASPxPopupControl1.SetContentUrl(url);
+                    ASPxPopupControl1.Show();
+                    break;
+                case "CheckInfo":
+                    var url = 'CheckInfo.aspx';
+                    ASPxPopupControl2.SetContentUrl(url);
+                    ASPxPopupControl2.Show();
                     break;
 
-                case "Button3": break;
                 default:
                     e.processOnServer = true;
                     break;
@@ -69,14 +74,14 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConflictDetection="CompareAllValues"
                 ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
                 DeleteCommand="DELETE FROM PathInfo WHERE (Id = ?)"
                 InsertCommand="INSERT INTO pathinfo(Id, StuID, Progect, Path, `Date`, Remark) VALUES (?, ?, ?, ?, ?, ?)"
                 OldValuesParameterFormatString="original_{0}"
                 SelectCommand="SELECT   * FROM      pathinfo"
-                UpdateCommand="UPDATE  pathinfo SET    Id = ?, StuID = ?, Progect = ?, Path = ?, `Date` = ?, Remark = ? WHERE(Id = ?)"
+                UpdateCommand="UPDATE  pathinfo SET  StuID = ?, Progect = ?, Path = ?, `Date` = ?, Remark = ? WHERE(Id = ?)"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />
@@ -108,6 +113,62 @@
                     <asp:Parameter Name="original_Remark" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <dx:ASPxPopupControl
+                ID="ASPxPopupControl1"
+                runat="server"
+                AllowDragging="True"
+                CloseAction="OuterMouseClick"
+                EnableViewState="False"
+                PopupHorizontalAlign="WindowCenter"
+                PopupVerticalOffset="40"
+                ShowFooter="True"
+                Width="1000px"
+                Height="400px"
+                FooterText="欢迎使用科研数据浏览信息系统"
+                HeaderText="查看系统应用详细信息，可窗口拖动并调整尺寸大小哦！"
+                ClientInstanceName="ASPxPopupControl1"
+                PopupAnimationType="Fade"
+                Modal="True"
+                ShowOnPageLoad="false"
+                AllowResize="True">
+
+                <ContentCollection>
+
+                    <dx:PopupControlContentControl
+                        ID="PopupControlContentControl1"
+                        runat="server"
+                        SupportsDisabledAttribute="True">
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+            </dx:ASPxPopupControl>
+            <dx:ASPxPopupControl
+                ID="ASPxPopupControl2"
+                runat="server"
+                AllowDragging="True"
+                CloseAction="OuterMouseClick"
+                EnableViewState="False"
+                PopupHorizontalAlign="WindowCenter"
+                PopupVerticalOffset="40"
+                ShowFooter="True"
+                Width="900px"
+                Height="400px"
+                FooterText="欢迎使用科研数据浏览信息系统"
+                HeaderText="查看系统应用详细信息，可窗口拖动并调整尺寸大小哦！"
+                ClientInstanceName="ASPxPopupControl2"
+                PopupAnimationType="Fade"
+                Modal="True"
+                ShowOnPageLoad="false"
+                AllowResize="True">
+
+                <ContentCollection>
+
+                    <dx:PopupControlContentControl
+                        ID="PopupControlContentControl2"
+                        runat="server"
+                        SupportsDisabledAttribute="True">
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+            </dx:ASPxPopupControl>
         </form>
     </div>
 </body>

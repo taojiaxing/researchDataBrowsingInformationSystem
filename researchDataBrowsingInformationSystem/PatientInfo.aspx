@@ -33,7 +33,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="margin-left: 14%">
+        <div>
             <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <SettingsSearchPanel Visible="True" />
