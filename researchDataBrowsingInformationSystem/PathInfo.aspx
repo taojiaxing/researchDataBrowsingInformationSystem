@@ -19,11 +19,14 @@
                     break;
 
                 case "Basic":
+                    e.processOnServer = true;
                     var url = 'PatientInfo.aspx';
                     ASPxPopupControl1.SetContentUrl(url);
                     ASPxPopupControl1.Show();
                     break;
+
                 case "CheckInfo":
+                    e.processOnServer = true;
                     var url = 'CheckInfo.aspx';
                     ASPxPopupControl2.SetContentUrl(url);
                     ASPxPopupControl2.Show();
@@ -41,12 +44,13 @@
         <form id="form1" runat="server">
             <div>
             </div>
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
+            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="StuID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+               <%-- <SettingsBehavior AllowFocusedRow="true" />--%>
                 <SettingsSearchPanel Visible="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <Columns>
-                    <dx:GridViewCommandColumn VisibleIndex="6" Caption="操作">
+                    <dx:GridViewCommandColumn VisibleIndex="6" Caption="操作" SelectAllCheckboxMode="Page" ShowSelectCheckbox="True">
                         <CustomButtons>
                             <dx:GridViewCommandColumnCustomButton ID="Basic" Text="基本信息">
                             </dx:GridViewCommandColumnCustomButton>
@@ -77,15 +81,15 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConflictDetection="CompareAllValues"
                 ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
-                DeleteCommand="DELETE FROM PathInfo WHERE (Id = ?)"
-                InsertCommand="INSERT INTO pathinfo(Id, StuID, Progect, Path, `Date`, Remark) VALUES (?, ?, ?, ?, ?, ?)"
+                DeleteCommand="DELETE FROM pathinfo WHERE StuID = ? "
+                InsertCommand="INSERT INTO pathinfo (Id, StuID, Progect, Path, `Date` , Remark) VALUES (?, ?, ?, ?, ?, ?)"
                 OldValuesParameterFormatString="original_{0}"
-                SelectCommand="SELECT   * FROM      pathinfo"
-                UpdateCommand="UPDATE  pathinfo SET  StuID = ?, Progect = ?, Path = ?, `Date` = ?, Remark = ? WHERE(Id = ?)"
+                SelectCommand="SELECT * FROM pathinfo"
+                UpdateCommand="UPDATE  pathinfo SET  Id = ?, Progect = ?, Path = ?, `Date` = ?, Remark = ? WHERE(StuID = ?)"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
-                    <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_StuID" Type="String" />
+                    <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_Progect" Type="String" />
                     <asp:Parameter Name="original_Path" Type="String" />
                     <asp:Parameter DbType="Date" Name="original_Date" />
@@ -100,13 +104,13 @@
                     <asp:Parameter Name="Remark" Type="String" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="StuID" Type="String" />
+                    <asp:Parameter Name="Id" Type="String" />
                     <asp:Parameter Name="Progect" Type="String" />
                     <asp:Parameter Name="Path" Type="String" />
                     <asp:Parameter DbType="Date" Name="Date" />
                     <asp:Parameter Name="Remark" Type="String" />
-                    <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_StuID" Type="String" />
+                    <asp:Parameter Name="original_Id" Type="String" />
                     <asp:Parameter Name="original_Progect" Type="String" />
                     <asp:Parameter Name="original_Path" Type="String" />
                     <asp:Parameter DbType="Date" Name="original_Date" />

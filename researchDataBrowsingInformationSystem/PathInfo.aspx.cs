@@ -1,10 +1,12 @@
 ﻿using DevExpress.Web;
 using System;
+using System.Data;
 
 namespace researchDataBrowsingInformationSystem
 {
     public partial class PathInfo : System.Web.UI.Page
     {
+        public static String Urls;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserName"] == null)
@@ -28,10 +30,22 @@ namespace researchDataBrowsingInformationSystem
                 case "New":
                     this.ASPxGridView1.AddNewRow();
                     break;
-                case "View":
-                    //this.Response.Write("<Script>window.open('CheckInfo.aspx','','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=750,height=470,left=80,top=40');</script>");
+                case "Basic":
+                    for(int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
+                    {
+                        if (this.ASPxGridView1.Selection.IsRowSelected(i))
+                        {
+                            DataRowView patientinfo = (DataRowView)ASPxGridView1.GetRow(i);
+
+                            Urls = "CheckInfo.aspx?Id=" + patientinfo.Row.ItemArray[0];
+                        }
+                    }
                     break;
             }
+        }
+        public static String Urlss()
+        {
+            return Urls;
         }
     }
 }

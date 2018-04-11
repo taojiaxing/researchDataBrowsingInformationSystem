@@ -35,10 +35,11 @@
     <form id="form1" runat="server">
         <div>
             <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
-                <Settings ShowFilterRow="True" ShowGroupPanel="True" />
-                <SettingsSearchPanel Visible="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
+                <Settings ShowFilterRow="True" />
                 <Columns>
+                    <%--     <dx:GridViewDataTextColumn Caption="病人性别" FieldName="Sex" VisibleIndex="3">
+                    </dx:GridViewDataTextColumn>--%>
                     <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="8" Caption="操作">
                         <CustomButtons>
                             <dx:GridViewCommandColumnCustomButton ID="View" Text="查看">
@@ -68,8 +69,6 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="病人姓名" FieldName="Name" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
-                    <%--     <dx:GridViewDataTextColumn Caption="病人性别" FieldName="Sex" VisibleIndex="3">
-                    </dx:GridViewDataTextColumn>--%>
                     <dx:GridViewDataTextColumn Caption="病人身高" FieldName="Height" VisibleIndex="4">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="病人体重" FieldName="Weitght" VisibleIndex="5">
