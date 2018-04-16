@@ -92,8 +92,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="biao1.aspx" />
+    <Content Include="biao2.aspx" />
+    <Content Include="biao3.aspx" />
     <Content Include="biao.aspx" />
+    <Content Include="biao1.aspx" />
     <Content Include="CheckInfo.aspx" />
     <Content Include="DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -128,12 +130,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="biao1.aspx.cs">
-      <DependentUpon>biao1.aspx</DependentUpon>
+    <Compile Include="biao2.aspx.cs">
+      <DependentUpon>biao2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="biao1.aspx.designer.cs">
-      <DependentUpon>biao1.aspx</DependentUpon>
+    <Compile Include="biao2.aspx.designer.cs">
+      <DependentUpon>biao2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="biao3.aspx.cs">
+      <DependentUpon>biao3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="biao3.aspx.designer.cs">
+      <DependentUpon>biao3.aspx</DependentUpon>
     </Compile>
     <Compile Include="biao.aspx.cs">
       <DependentUpon>biao.aspx</DependentUpon>
@@ -141,6 +150,13 @@
     </Compile>
     <Compile Include="biao.aspx.designer.cs">
       <DependentUpon>biao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="biao1.aspx.cs">
+      <DependentUpon>biao1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="biao1.aspx.designer.cs">
+      <DependentUpon>biao1.aspx</DependentUpon>
     </Compile>
     <Compile Include="CheckInfo.aspx.cs">
       <DependentUpon>CheckInfo.aspx</DependentUpon>

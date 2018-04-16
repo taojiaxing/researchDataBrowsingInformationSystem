@@ -42,7 +42,7 @@
                 <SettingsSearchPanel Visible="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <Columns>
-                    <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="6" Caption="操作">
+                    <%--<dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="6" Caption="操作">
                         <CustomButtons>
                             <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">
                             </dx:GridViewCommandColumnCustomButton>
@@ -51,7 +51,7 @@
                             <dx:GridViewCommandColumnCustomButton ID="New" Text="新建" Visibility="FilterRow">
                             </dx:GridViewCommandColumnCustomButton>
                         </CustomButtons>
-                    </dx:GridViewCommandColumn>
+                    </dx:GridViewCommandColumn>--%>
                     <dx:GridViewDataTextColumn Caption="病人ID号" FieldName="Id" ReadOnly="false" VisibleIndex="0">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="描述哪类检查" FieldName="Type" VisibleIndex="2">

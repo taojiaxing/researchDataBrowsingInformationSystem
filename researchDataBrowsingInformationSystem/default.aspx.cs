@@ -128,10 +128,21 @@ namespace researchDataBrowsingInformationSystem
         {
             if (Session["Role"].ToString() == "1")
             {
-                mainIfr.Attributes.Add("src", "biao1.aspx");
+                mainIfr.Attributes.Add("src", "biao.aspx");
             }else if(Session["Role"].ToString() == "2")
             {
-                mainIfr.Attributes.Add("src", "biao.aspx");
+                if (Session["Right"].ToString() == "1")
+                {
+                    mainIfr.Attributes.Add("src", "biao1.aspx");
+                }
+                if (Session["Right"].ToString() == "2")
+                {
+                    mainIfr.Attributes.Add("src", "biao2.aspx");
+                }
+                if (Session["Right"].ToString() == "3")
+                {
+                    mainIfr.Attributes.Add("src", "biao2.aspx");
+                }
             }
         }
     }

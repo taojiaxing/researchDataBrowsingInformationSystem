@@ -10,9 +10,11 @@ namespace researchDataBrowsingInformationSystem
             if (Session["UserName"] == null)
             {
                 Response.Redirect("default.aspx");
+            }if (Session["Checkid"] != null)
+            {
+                SqlDataSource1.SelectParameters[0].DefaultValue = Session["Checkid"].ToString();
+                ASPxGridView1.DataBind();
             }
-            SqlDataSource1.SelectParameters[0].DefaultValue = Session["Checkid"].ToString();
-            ASPxGridView1.DataBind();
         }
 
         protected void ASPxGridView1_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)

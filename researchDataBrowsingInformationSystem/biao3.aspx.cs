@@ -3,7 +3,7 @@ using System.Data;
 
 namespace researchDataBrowsingInformationSystem
 {
-    public partial class biao : System.Web.UI.Page
+    public partial class biao3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,12 +17,14 @@ namespace researchDataBrowsingInformationSystem
                     }
                     else
                     {
-
+                        this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
+                        this.ASPxGridView1.DataBind();
                     }
                 }
                 else
                 {
-
+                    this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
+                    this.ASPxGridView1.DataBind();
                 }
             }
             else

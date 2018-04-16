@@ -17,12 +17,14 @@ namespace researchDataBrowsingInformationSystem
                     }
                     else
                     {
-
+                        this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
+                        this.ASPxGridView1.DataBind();
                     }
                 }
                 else
                 {
-
+                    this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
+                    this.ASPxGridView1.DataBind();
                 }
             }
             else

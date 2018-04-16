@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="biao1.aspx.cs" Inherits="researchDataBrowsingInformationSystem.biao1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="biao3.aspx.cs" Inherits="researchDataBrowsingInformationSystem.biao3" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
@@ -132,14 +132,6 @@
 
                 <SettingsSearchPanel Visible="True" />
                 <Columns>
-                    <dx:GridViewCommandColumn Caption="操作" ShowClearFilterButton="True" VisibleIndex="16" >
-                        <CustomButtons>
-                            <dx:GridViewCommandColumnCustomButton ID="Viwe_check" Text="查看检查结果">
-                            </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="Download" Text="下载">
-                            </dx:GridViewCommandColumnCustomButton>
-                        </CustomButtons>
-                    </dx:GridViewCommandColumn>
                     <dx:GridViewDataTextColumn FieldName="StudyInstanceUID" ReadOnly="True" VisibleIndex="1">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="PatientID" VisibleIndex="2">
@@ -170,7 +162,6 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="StudyDescription" VisibleIndex="15">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewCommandColumn Caption="选择" ShowSelectCheckbox="true"></dx:GridViewCommandColumn>
                 </Columns>
             </dx:ASPxGridView>
         </div>
