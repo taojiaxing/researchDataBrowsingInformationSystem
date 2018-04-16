@@ -51,6 +51,9 @@
     <Reference Include="DevExpress.Web.Resources.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Web">
+      <HintPath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\DevExpress.XtraReports.v17.1.Web\v4.0_17.1.5.0__b88d1754d700e49a\DevExpress.XtraReports.v17.1.Web.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -89,6 +92,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="biao.aspx" />
     <Content Include="CheckInfo.aspx" />
     <Content Include="DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -100,8 +104,6 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
-    <Content Include="PathInfo.aspx" />
-    <Content Include="PatientInfo.aspx" />
     <EntityDeploy Include="DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
@@ -125,6 +127,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="biao.aspx.cs">
+      <DependentUpon>biao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="biao.aspx.designer.cs">
+      <DependentUpon>biao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CheckInfo.aspx.cs">
       <DependentUpon>CheckInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,13 +166,6 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PathInfo.aspx.cs">
-      <DependentUpon>PathInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PathInfo.aspx.designer.cs">
-      <DependentUpon>PathInfo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="pathinfo.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -177,13 +179,6 @@
     </Compile>
     <Compile Include="reloInfo.aspx.designer.cs">
       <DependentUpon>reloInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PatientInfo.aspx.cs">
-      <DependentUpon>PatientInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PatientInfo.aspx.designer.cs">
-      <DependentUpon>PatientInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="roleinfo.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
