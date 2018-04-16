@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Data;
 
 namespace researchDataBrowsingInformationSystem
 {
-    public partial class biao : System.Web.UI.Page
+    public partial class biao1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,14 +18,11 @@ namespace researchDataBrowsingInformationSystem
                     else
                     {
 
-                        SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
-                        ASPxGridView1.DataBind();
                     }
                 }
                 else
                 {
-                    SqlDataSource1.SelectCommand = "SELECT * FROM biao";
-                    ASPxGridView1.DataBind();
+
                 }
             }
             else
@@ -48,6 +46,18 @@ namespace researchDataBrowsingInformationSystem
 
                 case "New":
                     this.ASPxGridView1.AddNewRow();
+                    break;
+                case "Viwe_check":
+                    for (int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
+                    {
+                        if (this.ASPxGridView1.Selection.IsRowSelected(i))
+                        {
+                            DataRowView checkinfo = (DataRowView)ASPxGridView1.GetRow(i);
+
+                            Session["Checkid"] = checkinfo.Row.ItemArray[0];
+                        }
+                    }
+
                     break;
             }
         }

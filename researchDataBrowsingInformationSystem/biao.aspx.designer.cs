@@ -40,30 +40,21 @@ namespace researchDataBrowsingInformationSystem {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// New 控件。
+        /// Viwe_check 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::DevExpress.Web.GridViewCommandColumnCustomButton New;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Viwe_check;
         
         /// <summary>
-        /// Edit 控件。
+        /// Download 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Edit;
-        
-        /// <summary>
-        /// Delete 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Delete;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Download;
     }
 }

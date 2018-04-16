@@ -36,8 +36,8 @@
                         <asp:Panel ID="pnlWelcome" runat="server" Height="30px" Width="100%">
                             <asp:Label ID="lblWelcome" runat="server"></asp:Label>
                             <asp:Button ID="btnQuit" runat="server" CausesValidation="False" Text="退出" Width="146px" OnClick="btnQuit_Click" />
-                            <asp:Button ID="Reloinfo" runat="server" Text="权限管理" OnClick="Reloinfo_Click" />
-                            <asp:Button ID="PatientInfo" runat="server" Text="资料管理" OnClick="PatientInfo_Click" />
+                            <asp:Button ID="btnReloinfo" runat="server" Text="权限管理" Width="146px" OnClick="Reloinfo_Click" />
+                            <asp:Button ID="btnPatientInfo" runat="server" Text="资料管理" Width="146px" OnClick="PatientInfo_Click" />
                         </asp:Panel>
                     </td>
                 </tr>
@@ -46,7 +46,7 @@
     </div>
     <!--表内容-->
     <div id="main">
-        <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="720px" src=""></iframe>
+        <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="800" src=""></iframe>
     </div>
 </body>
 </html>

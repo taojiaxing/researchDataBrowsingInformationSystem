@@ -18,25 +18,68 @@ namespace researchDataBrowsingInformationSystem
         //通过判断Session["UserName"]是否为空检查页面是否已登录（登录成功时会为Session["UserName"]注入值，就不空了。。否则就认为没有登录）。
         private void CheckPageStatus()
         {
-            if (Session["UserName"] != null)
+            if (Session["Role"] != null)
             {
-                pnlLogin.Visible = false;
-                pnlWelcome.Visible = true;
-                lblWelcome.Text = "欢迎登录，" + Session["UserName"].ToString();
+                if (Session["Role"].ToString() == "1")
+                {
+                    pnlLogin.Visible = false;
+                    pnlWelcome.Visible = true;
+                    String name;
+                    if (Session["UserName"] == null)
+                    {
+                        name = "";
+                    }
+                    else
+                    {
+                        name = Session["UserName"].ToString();
+                    }
+                    lblWelcome.Text = "欢迎登录，" + name; 
+                    btnReloinfo.Visible = true;
+                    btnPatientInfo.Visible = true;
+                }
+                else if (Session["Role"].ToString() == "2")
+                {
+                    if (Session["Right"].ToString() == "4")
+                    {
+                        btnPatientInfo.Visible = false;
+                        pnlLogin.Visible = false;
+                        pnlWelcome.Visible = true;
+                        String name;
+                        if (Session["UserName"] == null)
+                        {
+                            name = "";
+                        }
+                        else
+                        {
+                            name = Session["UserName"].ToString();
+                        }
+                        lblWelcome.Text = "欢迎登录，" + name;
+                        btnReloinfo.Visible = false;
+                    }
+                    else
+                    {
+                        pnlLogin.Visible = false;
+                        pnlWelcome.Visible = true;
+                        String name;
+                        if (Session["UserName"] == null)
+                        {
+                            name = "";
+                        }
+                        else
+                        {
+                            name = Session["UserName"].ToString();
+                        }
+                        lblWelcome.Text = "欢迎登录，" + name;
+                        btnReloinfo.Visible = false;
+                        btnPatientInfo.Visible = true;
+                    }
+                }
             }
             else
             {
                 pnlWelcome.Visible = false;
                 pnlLogin.Visible = true;
             }
-            ////这个用来接收登录或退出后的信息。个人习惯，你也可以不这么做。
-            //if (Session["Message"] != null)
-            //{
-            //    lblMessage.Text = Session["Message"].ToString();
-            //    Session.Remove("Message");
-            //}
-            //else
-            //    lblMessage.Text = "";
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -65,6 +108,9 @@ namespace researchDataBrowsingInformationSystem
             if (Session["UserName"] != null)
             {
                 Session.Remove("UserName");
+                Session.Remove("Message");
+                Session.Remove("Role");
+                Session.Remove("Right");
                 Session["Message"] = "退出成功，欢迎您再来啊";
                 Response.Redirect("default.aspx");
             }
@@ -80,9 +126,12 @@ namespace researchDataBrowsingInformationSystem
 
         protected void PatientInfo_Click(object sender, EventArgs e)
         {
-            if (Session["UserName"] != null)
+            if (Session["Role"].ToString() == "1")
             {
-                mainIfr.Attributes.Add("src", "PathInfo.aspx");
+                mainIfr.Attributes.Add("src", "biao1.aspx");
+            }else if(Session["Role"].ToString() == "2")
+            {
+                mainIfr.Attributes.Add("src", "biao.aspx");
             }
         }
     }

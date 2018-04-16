@@ -10,7 +10,7 @@
 namespace researchDataBrowsingInformationSystem {
     
     
-    public partial class Login {
+    public partial class biao1 {
         
         /// <summary>
         /// form1 控件。
@@ -22,93 +22,84 @@ namespace researchDataBrowsingInformationSystem {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// pnlLogin 控件。
+        /// SqlDataSource1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlLogin;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// txbUserName 控件。
+        /// ASPxGridView1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbUserName;
+        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// txbUserPassword 控件。
+        /// Viwe_check 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbUserPassword;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Viwe_check;
         
         /// <summary>
-        /// btnLogin 控件。
+        /// Download 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Download;
         
         /// <summary>
-        /// pnlWelcome 控件。
+        /// New 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlWelcome;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton New;
         
         /// <summary>
-        /// lblWelcome 控件。
+        /// Edit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWelcome;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Edit;
         
         /// <summary>
-        /// btnQuit 控件。
+        /// Delete 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnQuit;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Delete;
         
         /// <summary>
-        /// btnReloinfo 控件。
+        /// ASPxPopupControl1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReloinfo;
+        protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControl1;
         
         /// <summary>
-        /// btnPatientInfo 控件。
+        /// PopupControlContentControl1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPatientInfo;
-        
-        /// <summary>
-        /// mainIfr 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe mainIfr;
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
     }
 }

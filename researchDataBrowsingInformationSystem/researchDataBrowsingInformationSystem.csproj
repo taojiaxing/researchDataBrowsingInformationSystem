@@ -92,6 +92,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="biao1.aspx" />
     <Content Include="biao.aspx" />
     <Content Include="CheckInfo.aspx" />
     <Content Include="DataModel.Context.tt">
@@ -127,6 +128,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="biao1.aspx.cs">
+      <DependentUpon>biao1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="biao1.aspx.designer.cs">
+      <DependentUpon>biao1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="biao.aspx.cs">
       <DependentUpon>biao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

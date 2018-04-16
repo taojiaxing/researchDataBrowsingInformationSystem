@@ -11,6 +11,8 @@ namespace researchDataBrowsingInformationSystem
             {
                 Response.Redirect("default.aspx");
             }
+            SqlDataSource1.SelectParameters[0].DefaultValue = Session["Checkid"].ToString();
+            ASPxGridView1.DataBind();
         }
 
         protected void ASPxGridView1_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)

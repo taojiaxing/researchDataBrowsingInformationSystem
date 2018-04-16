@@ -72,9 +72,12 @@
                 DeleteCommand="DELETE FROM checkinfo WHERE (Checkid = ?)" 
                 InsertCommand="INSERT INTO checkinfo (Id, Checkid, Type, DoctorCheckID, Info, Remark) VALUES (?, ?, ?, ?, ?, ?)" 
                 OldValuesParameterFormatString="original_{0}" 
-                SelectCommand="SELECT * FROM checkinfo" 
+                SelectCommand="SELECT * FROM checkinfo WHERE Checkid = ?" 
                 UpdateCommand="UPDATE checkinfo SET Id = ?, Type = ?, DoctorCheckID = ?, Info = ?, Remark = ? WHERE (Checkid = ?)" 
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
+                <SelectParameters>
+                    <asp:Parameter Name="Checkid" Type="String" />
+                </SelectParameters>
                 <DeleteParameters>
                     <asp:Parameter Name="original_Checkid" Type="String" />
                     <asp:Parameter Name="original_Id" Type="String" />
