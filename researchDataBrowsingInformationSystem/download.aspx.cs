@@ -14,7 +14,20 @@ namespace researchDataBrowsingInformationSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CustomProvider.path = Session["path"].ToString();
+            check();
+
+        }
+        public void check()
+        {
+            if (Session["path"] == null)
+            {
+               Response.Redirect("main.aspx");
+            }
+            else if (Session["path"] != null)
+            {
+                CustomProvider.path = Session["path"].ToString();
+                //Session.Remove("path");
+            }
         }
     }
 }

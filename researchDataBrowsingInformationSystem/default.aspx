@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body style="margin: 0px; height: 544px;">
+<body style="margin: 0px; height: 822px;">
     <div id="main">
         <p style="vertical-align: middle; text-align: center; font-weight: bold; font-size: 25px; color: #003366; font-family: Arial;" class="auto-style1">科研数据浏览信息系统</p>
         <form id="form1" runat="server">

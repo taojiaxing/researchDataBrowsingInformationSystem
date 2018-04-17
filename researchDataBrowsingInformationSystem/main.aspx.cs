@@ -77,6 +77,7 @@ namespace researchDataBrowsingInformationSystem
             }
             else
             {
+                Response.Redirect("default.aspx");
                 pnlWelcome.Visible = false;
                 pnlLogin.Visible = true;
             }

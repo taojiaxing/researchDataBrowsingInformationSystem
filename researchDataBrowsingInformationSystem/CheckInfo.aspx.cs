@@ -14,6 +14,11 @@ namespace researchDataBrowsingInformationSystem
             {
                 SqlDataSource1.SelectParameters[0].DefaultValue = Session["Checkid"].ToString();
                 ASPxGridView1.DataBind();
+                Session.Remove("Checkid");
+            }
+            else
+            {
+                Response.Redirect("main.aspx");
             }
         }
 
