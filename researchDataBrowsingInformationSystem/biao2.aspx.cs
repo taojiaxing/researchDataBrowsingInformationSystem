@@ -61,6 +61,23 @@ namespace researchDataBrowsingInformationSystem
                     }
 
                     break;
+                case "Download":
+                    for (int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
+                    {
+                        if (this.ASPxGridView1.Selection.IsRowSelected(i))
+                        {
+                            DataRowView checkinfo = (DataRowView)ASPxGridView1.GetRow(i);
+
+                            String path = checkinfo.Row.ItemArray[5].ToString();
+                            path = path.Replace("H:/MRI_Data", "");
+                            //path.Split(' ');
+                            String[] paths = path.Split('/');
+                            Session["root"] = paths[0];
+                            path = path + "/";
+                            Session["path"] = path;
+                        }
+                    }
+                    break;
             }
         }
     }

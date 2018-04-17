@@ -32,6 +32,12 @@
                     ASPxPopupControl1.SetContentUrl(url);
                     ASPxPopupControl1.Show();
                     break;
+                case "Download":
+                    e.processOnServer = true;
+                    var url = 'download.aspx';
+                    ASPxPopupControl2.SetContentUrl(url);
+                    ASPxPopupControl2.Show();
+                    break;
                 default:
                     e.processOnServer = true;
                     break;
@@ -134,7 +140,7 @@
                 <Columns>
                     <dx:GridViewCommandColumn Caption="操作" ShowClearFilterButton="True" VisibleIndex="16" >
                         <CustomButtons>
-                            <dx:GridViewCommandColumnCustomButton ID="Viwe_check" Text="查看检查结果">
+                            <dx:GridViewCommandColumnCustomButton ID="Download" Text="查看扫描结果">
                             </dx:GridViewCommandColumnCustomButton>
                         </CustomButtons>
                     </dx:GridViewCommandColumn>
@@ -195,6 +201,34 @@
 
                 <dx:PopupControlContentControl
                     ID="PopupControlContentControl1"
+                    runat="server"
+                    SupportsDisabledAttribute="True">
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+        </dx:ASPxPopupControl>
+        <dx:ASPxPopupControl
+            ID="ASPxPopupControl2"
+            runat="server"
+            AllowDragging="True"
+            CloseAction="OuterMouseClick"
+            EnableViewState="False"
+            PopupHorizontalAlign="WindowCenter"
+            PopupVerticalOffset="40"
+            ShowFooter="True"
+            Width="1400px"
+            Height="544px"
+            FooterText="欢迎使用科研数据浏览信息系统"
+            HeaderText="查看系统应用详细信息，可窗口拖动并调整尺寸大小哦！"
+            ClientInstanceName="ASPxPopupControl2"
+            PopupAnimationType="Fade"
+            Modal="True"
+            ShowOnPageLoad="false"
+            AllowResize="True">
+
+            <ContentCollection>
+
+                <dx:PopupControlContentControl
+                    ID="PopupControlContentControl2"
                     runat="server"
                     SupportsDisabledAttribute="True">
                 </dx:PopupControlContentControl>

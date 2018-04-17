@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
+    <Content Include="download.aspx" />
     <Content Include="main.aspx" />
     <Content Include="reloInfo.aspx" />
     <Content Include="Web.config">
@@ -169,6 +170,7 @@
     <Compile Include="checkinfo.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomProvider.cs" />
     <Compile Include="DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +192,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download.aspx.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download.aspx.designer.cs">
+      <DependentUpon>download.aspx</DependentUpon>
     </Compile>
     <Compile Include="main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>

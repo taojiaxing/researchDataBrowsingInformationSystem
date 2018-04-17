@@ -32,6 +32,12 @@
                     ASPxPopupControl1.SetContentUrl(url);
                     ASPxPopupControl1.Show();
                     break;
+                case "Download":
+                    e.processOnServer = true;
+                    var url = 'download.aspx';
+                    ASPxPopupControl2.SetContentUrl(url);
+                    ASPxPopupControl2.Show();
+                    break;
                 default:
                     e.processOnServer = true;
                     break;
