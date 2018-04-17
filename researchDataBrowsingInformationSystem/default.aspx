@@ -10,43 +10,30 @@
         .auto-style1 {
             width: 55%;
         }
-
-        #mainIfr {
-            left: 30%;
         }
+        #main {
+            height: 662px;
 
-        #mainIfr {
-            margin-top: 0px;
         }
     </style>
 </head>
 <body style="margin: 0px; height: 544px;">
-    <div>
+    <div id="main">
+        <p style="vertical-align: middle; text-align: center; font-weight: bold; font-size: 25px; color: #003366; font-family: Arial;" class="auto-style1">科研数据浏览信息系统</p>
         <form id="form1" runat="server">
-            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 61px">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 293px; height: 140px; margin-left:40%; margin-top:15%">
                 <tr>
-                    <td style="vertical-align: middle; text-align: center; font-weight: bold; font-size: 25px; color: #003366; font-family: Arial;" class="auto-style1">科研数据浏览信息系统</td>
-                    <td style="vertical-align: middle; text-align: left">
-                        <asp:Panel ID="pnlLogin" runat="server" Height="30px" Width="100%">
-                            用户名：<asp:TextBox ID="txbUserName" runat="server"></asp:TextBox>密码：
-                        <!-- 对于密码TextBox，应把TextMode属性设置为Password，这样输入的值会以****形式出现，保护密码在输入时不被别人看到 -->
-                            <asp:TextBox ID="txbUserPassword" runat="server" TextMode="Password"></asp:TextBox>
-                            <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" />
-                        </asp:Panel>
-                        <asp:Panel ID="pnlWelcome" runat="server" Height="30px" Width="100%">
-                            <asp:Label ID="lblWelcome" runat="server"></asp:Label>
-                            <asp:Button ID="btnQuit" runat="server" CausesValidation="False" Text="退出" Width="146px" OnClick="btnQuit_Click" />
-                            <asp:Button ID="btnReloinfo" runat="server" Text="权限管理" Width="146px" OnClick="Reloinfo_Click" />
-                            <asp:Button ID="btnPatientInfo" runat="server" Text="资料管理" Width="146px" OnClick="PatientInfo_Click" />
-                        </asp:Panel>
-                    </td>
+                    <td>用户名：<asp:TextBox ID="txbUserName" runat="server"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>密码：&nbsp; <asp:TextBox ID="txbUserPassword" runat="server" TextMode="Password"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" /></td>
                 </tr>
             </table>
-        </form>
-    </div>
-    <!--表内容-->
-    <div id="main">
-        <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="800" src=""></iframe>
+              <br />             
+         </form>
     </div>
 </body>
 </html>
