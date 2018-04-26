@@ -31,6 +31,7 @@ namespace researchDataBrowsingInformationSystem
             {
                 Response.Redirect("default.aspx");
             }
+            ASPxGridView1.Attributes.Add("style", "word-break:break-all;word-wrap:break-word");
         }
 
         protected void ASPxGridView1_CustomButtonCallback(object sender, DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs e)

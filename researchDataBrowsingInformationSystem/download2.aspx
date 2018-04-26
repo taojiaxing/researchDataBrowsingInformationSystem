@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="download.aspx.cs" Inherits="researchDataBrowsingInformationSystem.download" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="download2.aspx.cs" Inherits="researchDataBrowsingInformationSystem.download2" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
@@ -11,7 +11,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="DownloadDirBtn" runat="server" OnClick="DownloadDirBtn_Click" Text="下载文件夹" />
             <dx:ASPxFileManager ID="ASPxFileManager1" runat="server" CustomFileSystemProviderTypeName="CustomProvider" Theme="Aqua">
                 <ClientSideEvents
                     CurrentFolderChanged="function(s, e) { folder(s,e);}" />

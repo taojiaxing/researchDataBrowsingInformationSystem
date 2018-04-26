@@ -115,6 +115,7 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
+    <Content Include="download2.aspx" />
     <Content Include="download.aspx" />
     <Content Include="main.aspx" />
     <Content Include="reloInfo.aspx" />
@@ -192,6 +194,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download2.aspx.cs">
+      <DependentUpon>download2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download2.aspx.designer.cs">
+      <DependentUpon>download2.aspx</DependentUpon>
     </Compile>
     <Compile Include="download.aspx.cs">
       <DependentUpon>download.aspx</DependentUpon>

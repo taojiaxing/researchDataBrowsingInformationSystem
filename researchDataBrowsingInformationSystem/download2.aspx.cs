@@ -12,11 +12,11 @@ using System.Web.UI.WebControls;
 
 namespace researchDataBrowsingInformationSystem
 {
-    public partial class download : System.Web.UI.Page
+    public partial class download2 : System.Web.UI.Page
     {
         private string _ftpIP = "127.0.0.1";
         private string _dir = "";
-        private string _defalutDir = @"H:\MRI_Data\";
+        private string _defalutDir = @"E:\Thinkgeo\科研数据浏览信息系统\数据\";
 
         protected void Page_Load(object sender, EventArgs e)
         {

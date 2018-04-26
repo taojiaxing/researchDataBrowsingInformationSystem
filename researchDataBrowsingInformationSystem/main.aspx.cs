@@ -8,11 +8,31 @@ namespace researchDataBrowsingInformationSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Role"].ToString() == "1")
+            {
+                mainIfr.Attributes.Add("src", "biao.aspx");
+            }
+            else if (Session["Role"].ToString() == "2")
+            {
+                if (Session["Right"].ToString() == "1")
+                {
+                    mainIfr.Attributes.Add("src", "biao1.aspx");
+                }
+                if (Session["Right"].ToString() == "2")
+                {
+                    mainIfr.Attributes.Add("src", "biao2.aspx");
+                }
+                if (Session["Right"].ToString() == "3")
+                {
+                    mainIfr.Attributes.Add("src", "biao3.aspx");
+                }
+            }
             //确保页面是第一次被访问
             if (!Page.IsPostBack)
             {
                 CheckPageStatus();
             }
+            
         }
 
         //通过判断Session["UserName"]是否为空检查页面是否已登录（登录成功时会为Session["UserName"]注入值，就不空了。。否则就认为没有登录）。

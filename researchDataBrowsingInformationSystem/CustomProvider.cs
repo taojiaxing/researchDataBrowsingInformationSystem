@@ -8,7 +8,6 @@ using System.Net;
 /// <summary>
 /// Summary description for CustomProvider
 /// </summary>
-///
 internal enum ElementType
 {
     Directory,
@@ -19,17 +18,19 @@ public class CustomProvider : FileSystemProviderBase
 {
     private String _connectionString;
     private NetworkCredential _creds;
-    public static String path;
+    public static string FtpIP = string.Empty;
+    public static string Dir = string.Empty;
 
     public CustomProvider(String folder)
         : base(folder)
     {
-        var ftpUser = "";
-        var ftpPass = "";
-        var ftpServer = "127.0.0.1";
-        var dir = path;
+        //var ftpUser = "test";
+        //var ftpPass = "123";
+        //var ftpServer = "127.0.0.1";
+        //var dir = "";
+        //创建认证
         _creds = new NetworkCredential();
-        _connectionString = String.Format("ftp://{0}/{1}", ftpServer, dir);
+        _connectionString = String.Format("ftp://{0}/{1}", FtpIP, Dir);
     }
 
     public CustomProvider(String connectionString, NetworkCredential creds, String folder)

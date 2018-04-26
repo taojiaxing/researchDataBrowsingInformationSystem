@@ -34,7 +34,7 @@
                     break;
                 case "Download":
                     e.processOnServer = true;
-                    var url = 'download.aspx';
+                    var url = 'download2.aspx';
                     ASPxPopupControl2.SetContentUrl(url);
                     ASPxPopupControl2.Show();
                     break;
@@ -138,35 +138,35 @@
 
                 <SettingsSearchPanel Visible="True" />
                 <Columns>
-                    <dx:GridViewDataTextColumn FieldName="StudyInstanceUID" ReadOnly="True" VisibleIndex="1">
+                    <dx:GridViewDataTextColumn FieldName="StudyInstanceUID" ReadOnly="True" VisibleIndex="1" Width="10px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientID" VisibleIndex="2">
+                    <dx:GridViewDataTextColumn FieldName="PatientID" VisibleIndex="2" Width="6px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientName" VisibleIndex="3">
+                    <dx:GridViewDataTextColumn FieldName="PatientName" VisibleIndex="3" Width="10px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientSex" VisibleIndex="4">
+                    <dx:GridViewDataTextColumn FieldName="PatientSex" VisibleIndex="4" Width="3px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientAge" VisibleIndex="5">
+                    <dx:GridViewDataTextColumn FieldName="PatientAge" VisibleIndex="5" Width="3px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="FilePath" VisibleIndex="6">
+                    <dx:GridViewDataTextColumn FieldName="FilePath" VisibleIndex="6" Width="200px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="OperatorsName" VisibleIndex="7">
+                    <dx:GridViewDataTextColumn FieldName="OperatorsName" VisibleIndex="7" Width="8px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientBirthDate" VisibleIndex="8">
+                    <dx:GridViewDataTextColumn FieldName="PatientBirthDate" VisibleIndex="8" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="AccessionNumber" VisibleIndex="9">
+                    <dx:GridViewDataTextColumn FieldName="AccessionNumber" VisibleIndex="9" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyID" VisibleIndex="10">
+                    <dx:GridViewDataTextColumn FieldName="StudyID" VisibleIndex="10" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="BodyPartExamined" VisibleIndex="11">
+                    <dx:GridViewDataTextColumn FieldName="BodyPartExamined" VisibleIndex="11" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyDate" VisibleIndex="12">
+                    <dx:GridViewDataTextColumn FieldName="StudyDate" VisibleIndex="12" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyTime" VisibleIndex="13">
+                    <dx:GridViewDataTextColumn FieldName="StudyTime" VisibleIndex="13" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Modality" VisibleIndex="14">
+                    <dx:GridViewDataTextColumn FieldName="Modality" VisibleIndex="14" Width="5px">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyDescription" VisibleIndex="15">
+                    <dx:GridViewDataTextColumn FieldName="StudyDescription" VisibleIndex="15" Width="10px">
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>

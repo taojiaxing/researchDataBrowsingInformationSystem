@@ -48,6 +48,7 @@
     <div id="main">
         <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="800" src=""></iframe><br />
     </div>
+    
     <div id="Bottom" style="padding-right: 3em;">
 		<span class="firstSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科研数据浏览信息系统欢迎您</span>
 	</div>
