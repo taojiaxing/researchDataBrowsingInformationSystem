@@ -12,12 +12,10 @@
     <form id="form1" runat="server">
         <div>
             <asp:Button ID="DownloadDirBtn" runat="server" OnClick="DownloadDirBtn_Click" Text="下载文件夹" />
-            <dx:ASPxFileManager ID="ASPxFileManager1" runat="server" CustomFileSystemProviderTypeName="CustomProvider" Theme="Aqua">
+            <dx:ASPxFileManager ID="ASPxFileManager1" runat="server" CustomFileSystemProviderTypeName="CustomProvider" Theme="Default" EnableTheming="True">
                 <ClientSideEvents
                     CurrentFolderChanged="function(s, e) { folder(s,e);}" />
                 <Settings RootFolder="/" ThumbnailFolder="~\Thumb" EnableMultiSelect="True" />
-                <SettingsFileList View="Details">
-                </SettingsFileList>
                 <SettingsUpload Enabled="False">
                 </SettingsUpload>
             </dx:ASPxFileManager>

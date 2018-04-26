@@ -11,12 +11,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <dx:ASPxFileManager ID="ASPxFileManager1" runat="server" CustomFileSystemProviderTypeName="CustomProvider" Theme="Aqua">
+            <dx:ASPxFileManager ID="ASPxFileManager1" runat="server" CustomFileSystemProviderTypeName="CustomProvider" Theme="Default" EnableTheming="True">
                 <ClientSideEvents
                     CurrentFolderChanged="function(s, e) { folder(s,e);}" />
                 <Settings RootFolder="/" ThumbnailFolder="~\Thumb" EnableMultiSelect="True" />
-                <SettingsFileList View="Details">
-                </SettingsFileList>
                 <SettingsUpload Enabled="False">
                 </SettingsUpload>
             </dx:ASPxFileManager>
