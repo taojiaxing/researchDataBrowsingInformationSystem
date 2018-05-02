@@ -37,7 +37,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Checkid" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
+            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Checkid" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <SettingsSearchPanel Visible="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />

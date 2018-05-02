@@ -36,22 +36,28 @@
                         <asp:Panel ID="pnlWelcome" runat="server" Height="30px" Width="100%">
                             <asp:Label ID="lblWelcome" runat="server"></asp:Label>
                             <asp:Button ID="btnQuit" runat="server" CausesValidation="False" Text="退出" Width="146px" OnClick="btnQuit_Click" />
-                            <asp:Button ID="btnReloinfo" runat="server" Text="权限管理" Width="146px" OnClick="Reloinfo_Click" />
-                            <asp:Button ID="btnPatientInfo" runat="server" Text="资料管理" Width="146px" OnClick="PatientInfo_Click" />
                         </asp:Panel>
                     </td>
                 </tr>
             </table>
-        </form>
-    </div>
-    <!--表内容-->
-    <div id="main">
-        <iframe id="mainIfr" runat="server" name="mainIfr" width="100%" height="800" src=""></iframe>
-        <br />
-    </div>
 
-    <div id="Bottom" style="padding-right: 3em;">
-        <span class="firstSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;科研数据浏览信息系统欢迎您</span>
+            <!--表内容-->
+            <div id="main">
+
+                <div id="left" style="float: left; width: 12%; height: 800px;" runat="server">
+                    <asp:Button ID="btnReloinfo" runat="server" Text="权限管理" Width="100%" OnClick="Reloinfo_Click" />
+                    <br />
+                    <asp:Button ID="btnPatientInfo" runat="server" Text="资料管理" Width="100%" OnClick="PatientInfo_Click" />
+                </div>
+                <iframe id="mainIfr" runat="server" name="mainIfr" style="float: right" width="87%" height="800" src=""></iframe>
+                <br />
+            </div>
+        </form>
+
+        <div id="Bottom" ">
+            <span class="firstSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp; 科研数据浏览信息系统欢迎您</span>
+        </div>
     </div>
 </body>
 </html>

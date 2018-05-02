@@ -36,9 +36,9 @@
     </script>
 </head>
 <body>
-    <div style="margin-left: 20.5%">
+    <div>
         <form id="form1" runat="server">
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
+            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <SettingsSearchPanel Visible="True" />

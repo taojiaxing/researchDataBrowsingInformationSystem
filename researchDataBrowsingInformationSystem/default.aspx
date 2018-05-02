@@ -27,7 +27,7 @@
                     <td>用户名：<asp:TextBox ID="txbUserName" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td>密码：&nbsp;
+                    <td>密码：&nbsp;&nbsp;
                         <asp:TextBox ID="txbUserPassword" runat="server" TextMode="Password"></asp:TextBox></td>
                 </tr>
                 <tr>

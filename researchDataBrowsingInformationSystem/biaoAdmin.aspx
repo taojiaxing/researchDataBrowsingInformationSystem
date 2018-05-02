@@ -126,7 +126,7 @@
             </asp:UpdatePanel>
             <dx:ASPxGridView ID="ASPxGridView1" runat="server"
                 AutoGenerateColumns="False" DataSourceID="SqlDataSource1"
-                KeyFieldName="StudyInstanceUID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Office2003Silver">
+                KeyFieldName="StudyInstanceUID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <SettingsBehavior AllowSelectByRowClick="True" />
