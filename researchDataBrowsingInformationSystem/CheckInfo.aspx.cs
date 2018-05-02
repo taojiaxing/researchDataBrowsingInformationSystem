@@ -9,8 +9,10 @@ namespace researchDataBrowsingInformationSystem
         {
             if (Session["UserName"] == null)
             {
-                Response.Redirect("default.aspx");
-            }if (Session["Checkid"] != null)
+                Response.Write("路径读取失败，请刷新后再试！");
+                this.ASPxGridView1.Visible = false;
+            }
+            if (Session["Checkid"] != null)
             {
                 SqlDataSource1.SelectParameters[0].DefaultValue = Session["Checkid"].ToString();
                 ASPxGridView1.DataBind();
@@ -18,7 +20,8 @@ namespace researchDataBrowsingInformationSystem
             }
             else
             {
-                Response.Redirect("main.aspx");
+                Response.Write("路径读取失败，请刷新后再试！");
+                this.ASPxGridView1.Visible = false;
             }
         }
 

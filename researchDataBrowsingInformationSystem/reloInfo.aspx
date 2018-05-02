@@ -83,7 +83,7 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="用户密码" FieldName="Psd" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
-                  <%--  <dx:GridViewDataTextColumn Caption="用户角色" FieldName="Role" VisibleIndex="3">
+                    <%--  <dx:GridViewDataTextColumn Caption="用户角色" FieldName="Role" VisibleIndex="3">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="用户权限" FieldName="Right" VisibleIndex="4">
                     </dx:GridViewDataTextColumn>--%>
@@ -91,13 +91,13 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
-                DeleteCommand="DELETE FROM roleInfo WHERE (Id = ?)" 
-                InsertCommand="INSERT INTO roleInfo (Id, Name, Psd, Role, `Right`, Remark) VALUES (?, ?, ?, ?, ?, ?)" 
-                SelectCommand="SELECT * FROM roleInfo" 
-                UpdateCommand="UPDATE roleInfo SET Name = ?, Psd = ?, Role = ?, `Right` = ?, Remark = ? WHERE (Id=?)" 
-                ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}" 
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
+                DeleteCommand="DELETE FROM roleInfo WHERE (Id = ?)"
+                InsertCommand="INSERT INTO roleInfo (Id, Name, Psd, Role, `Right`, Remark) VALUES (?, ?, ?, ?, ?, ?)"
+                SelectCommand="SELECT * FROM roleInfo"
+                UpdateCommand="UPDATE roleInfo SET Name = ?, Psd = ?, Role = ?, `Right` = ?, Remark = ? WHERE (Id=?)"
+                ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
                     <asp:Parameter Name="original_Id" Type="String" />

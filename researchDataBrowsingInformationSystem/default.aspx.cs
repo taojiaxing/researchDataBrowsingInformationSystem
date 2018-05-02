@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Web.UI;
 
 namespace researchDataBrowsingInformationSystem
 {
@@ -33,7 +32,7 @@ namespace researchDataBrowsingInformationSystem
         //            {
         //                name = Session["UserName"].ToString();
         //            }
-        //            lblWelcome.Text = "欢迎登录，" + name; 
+        //            lblWelcome.Text = "欢迎登录，" + name;
         //            btnReloinfo.Visible = true;
         //            btnPatientInfo.Visible = true;
         //        }

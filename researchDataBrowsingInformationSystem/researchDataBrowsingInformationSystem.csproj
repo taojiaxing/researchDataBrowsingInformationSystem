@@ -92,10 +92,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="biao2.aspx" />
-    <Content Include="biao3.aspx" />
+    <Content Include="biaoAdmin.aspx" />
     <Content Include="biao.aspx" />
-    <Content Include="biao1.aspx" />
     <Content Include="CheckInfo.aspx" />
     <Content Include="DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -125,7 +123,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
-    <Content Include="download2.aspx" />
     <Content Include="download.aspx" />
     <Content Include="main.aspx" />
     <Content Include="reloInfo.aspx" />
@@ -134,19 +131,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="biao2.aspx.cs">
-      <DependentUpon>biao2.aspx</DependentUpon>
+    <Compile Include="biaoAdmin.aspx.cs">
+      <DependentUpon>biaoAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="biao2.aspx.designer.cs">
-      <DependentUpon>biao2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="biao3.aspx.cs">
-      <DependentUpon>biao3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="biao3.aspx.designer.cs">
-      <DependentUpon>biao3.aspx</DependentUpon>
+    <Compile Include="biaoAdmin.aspx.designer.cs">
+      <DependentUpon>biaoAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="biao.aspx.cs">
       <DependentUpon>biao.aspx</DependentUpon>
@@ -154,13 +144,6 @@
     </Compile>
     <Compile Include="biao.aspx.designer.cs">
       <DependentUpon>biao.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="biao1.aspx.cs">
-      <DependentUpon>biao1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="biao1.aspx.designer.cs">
-      <DependentUpon>biao1.aspx</DependentUpon>
     </Compile>
     <Compile Include="CheckInfo.aspx.cs">
       <DependentUpon>CheckInfo.aspx</DependentUpon>
@@ -194,13 +177,6 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="download2.aspx.cs">
-      <DependentUpon>download2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="download2.aspx.designer.cs">
-      <DependentUpon>download2.aspx</DependentUpon>
     </Compile>
     <Compile Include="download.aspx.cs">
       <DependentUpon>download.aspx</DependentUpon>

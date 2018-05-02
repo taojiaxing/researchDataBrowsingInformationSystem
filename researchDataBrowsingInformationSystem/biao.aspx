@@ -43,6 +43,16 @@
                     break;
             }
         }
+        function Viwe_checkClick() {
+            var url = 'CheckInfo.aspx';
+            ASPxPopupControl1.SetContentUrl(url);
+            ASPxPopupControl1.Show();
+        }
+        function DownloadClick() {
+            var url = 'download.aspx';
+            ASPxPopupControl2.SetContentUrl(url);
+            ASPxPopupControl2.Show();
+        }
     </script>
 </head>
 <body>
@@ -57,10 +67,13 @@
                 VALUES   (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 OldValuesParameterFormatString="original_{0}"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
-                SelectCommand="SELECT * FROM biao"
+                SelectCommand="SELECT * FROM biao where OperatorsName = ?"
                 UpdateCommand="UPDATE  biao SET PatientID = ?, PatientName = ?, PatientSex = ?, PatientAge = ?,
                 FilePath = ?, OperatorsName = ?, PatientBirthDate = ?, AccessionNumber = ?, StudyID = ?, BodyPartExamined = ?,
                 StudyDate = ?, StudyTime = ?, Modality = ?, StudyDescription = ? WHERE(StudyInstanceUID = ?)">
+                <SelectParameters>
+                    <asp:Parameter Name="OperatorsName" Type="String" />
+                </SelectParameters>
                 <DeleteParameters>
                     <asp:Parameter Name="original_StudyInstanceUID" Type="String" />
                     <asp:Parameter Name="original_PatientID" Type="String" />
@@ -127,56 +140,51 @@
                     <asp:Parameter Name="original_StudyDescription" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:Button ID="Viwe_check" runat="server" OnClick="Viwe_check_Click" OnClientClick="Viwe_checkClick()" Text="查看检查结果" Visible="False" />
+                    <asp:Button ID="Download" runat="server" OnClick="Download_Click" OnClientClick="DownloadClick()" Text="查看扫描结果" Visible="False" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <dx:ASPxGridView ID="ASPxGridView1" runat="server"
                 AutoGenerateColumns="False" DataSourceID="SqlDataSource1"
-                KeyFieldName="StudyInstanceUID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback">
+                KeyFieldName="StudyInstanceUID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Office2003Silver">
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
+                <SettingsBehavior AllowSelectByRowClick="True" />
                 <SettingsSearchPanel Visible="True" />
                 <Columns>
-                    <dx:GridViewCommandColumn Caption="操作" ShowClearFilterButton="True" VisibleIndex="16" >
-                        <CustomButtons>
-                            <dx:GridViewCommandColumnCustomButton ID="Viwe_check" Text="查看检查结果">
-                            </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="Download" Text="查看扫描结果">
-                            </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="New" Text="新建" Visibility="FilterRow">
-                            </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">
-                            </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="Delete" Text="删除">
-                            </dx:GridViewCommandColumnCustomButton>
-                        </CustomButtons>
-                    </dx:GridViewCommandColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyInstanceUID" ReadOnly="True" VisibleIndex="1" Width="10px">
+                    <dx:GridViewDataTextColumn FieldName="StudyInstanceUID" ReadOnly="True" VisibleIndex="1" Width="80px" Caption="StudyInstanceUID">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientID" VisibleIndex="2" Width="6px">
+                    <dx:GridViewDataTextColumn FieldName="PatientID" VisibleIndex="2" Width="6px" Caption="PatientID">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientName" VisibleIndex="3" Width="10px">
+                    <dx:GridViewDataTextColumn FieldName="PatientName" VisibleIndex="3" Width="10px" Caption="PatientName">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientSex" VisibleIndex="4" Width="3px">
+                    <dx:GridViewDataTextColumn FieldName="PatientSex" VisibleIndex="4" Width="3px" Caption="Patient Sex">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientAge" VisibleIndex="5" Width="3px">
+                    <dx:GridViewDataTextColumn FieldName="PatientAge" VisibleIndex="5" Width="3px" Caption="Patient Age">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="FilePath" VisibleIndex="6" Width="200px">
+                    <dx:GridViewDataTextColumn FieldName="FilePath" VisibleIndex="6" Width="200px" Caption="File Path">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="OperatorsName" VisibleIndex="7" Width="8px">
+                    <dx:GridViewDataTextColumn FieldName="OperatorsName" VisibleIndex="7" Width="8px" Caption="Operators Name">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="PatientBirthDate" VisibleIndex="8" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="PatientBirthDate" VisibleIndex="8" Width="5px" Caption="Patient Birth Date">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="AccessionNumber" VisibleIndex="9" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="AccessionNumber" VisibleIndex="9" Width="5px" Caption="Accession Number">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyID" VisibleIndex="10" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="StudyID" VisibleIndex="10" Width="5px" Caption="Study ID">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="BodyPartExamined" VisibleIndex="11" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="BodyPartExamined" VisibleIndex="11" Width="5px" Caption="Body Part Examined">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyDate" VisibleIndex="12" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="StudyDate" VisibleIndex="12" Width="5px" Caption="Study Date">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyTime" VisibleIndex="13" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="StudyTime" VisibleIndex="13" Width="5px" Caption="Study Time">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Modality" VisibleIndex="14" Width="5px">
+                    <dx:GridViewDataTextColumn FieldName="Modality" VisibleIndex="14" Width="5px" Caption="Modality">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="StudyDescription" VisibleIndex="15" Width="10px">
+                    <dx:GridViewDataTextColumn FieldName="StudyDescription" VisibleIndex="15" Width="10px" Caption="Study Description">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewCommandColumn Caption="选择" ShowSelectCheckbox="true" Width="20px"></dx:GridViewCommandColumn>
                 </Columns>
@@ -238,7 +246,6 @@
                 </dx:PopupControlContentControl>
             </ContentCollection>
         </dx:ASPxPopupControl>
-       
     </form>
 </body>
 </html>

@@ -1,14 +1,7 @@
-﻿using DevExpress.Web;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace researchDataBrowsingInformationSystem
 {
@@ -109,23 +102,30 @@ namespace researchDataBrowsingInformationSystem
         protected void DownloadDirBtn_Click(object sender, EventArgs e)
         {
             string path = _defalutDir + Session["path"].ToString() + FileName.Value;
-            if(FileName.Value == "")
+            if (FileName.Value == "")
             {
                 path = path.Substring(0, path.Length - 1);
             }
             DownloadDirectory(path);
         }
+
         public void check()
         {
             if (Session["path"] == null)
             {
-                Response.Redirect("main.aspx");
+                Response.Write("路径读取失败，请刷新后再试！");
+                this.ASPxFileManager1.Visible = false;
             }
             else if (Session["path"] != null)
             {
                 CustomProvider.Dir = Session["path"].ToString();
                 //Session.Remove("path");
+                if (Session["Right"].ToString() == "1" || Session["Role"].ToString() == "1")
+                {
+                    this.DownloadDirBtn.Visible = true;
+                }
             }
+            
         }
     }
 }

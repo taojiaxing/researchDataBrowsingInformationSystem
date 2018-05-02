@@ -3,7 +3,7 @@ using System.Data;
 
 namespace researchDataBrowsingInformationSystem
 {
-    public partial class biao : System.Web.UI.Page
+    public partial class biaoAdmin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -15,20 +15,9 @@ namespace researchDataBrowsingInformationSystem
                     {
                         Response.Redirect("default.aspx");
                     }
-                    else if (Session["Right"].ToString() == "1")
-                    {
-                        this.Viwe_check.Visible = true;
-                        this.Download.Visible = true;
-                    }
-                    else if (Session["Right"].ToString() == "2")
-                    {
-                        this.Viwe_check.Visible = true;
-                    }
-                    else if (Session["Right"].ToString() == "3")
+                    else
                     {
                     }
-                    this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
-                    this.ASPxGridView1.DataBind();
                 }
                 else
                 {
@@ -38,6 +27,7 @@ namespace researchDataBrowsingInformationSystem
             {
                 Response.Redirect("default.aspx");
             }
+            // ASPxGridView1.Attributes.Add("style", "word-break:break-all;word-wrap:break-word");
         }
 
         protected void ASPxGridView1_CustomButtonCallback(object sender, DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs e)
@@ -57,35 +47,35 @@ namespace researchDataBrowsingInformationSystem
                     this.ASPxGridView1.AddNewRow();
                     break;
 
-                case "Viwe_check":
-                    for (int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
-                    {
-                        if (this.ASPxGridView1.Selection.IsRowSelected(i))
-                        {
-                            DataRowView checkinfo = (DataRowView)ASPxGridView1.GetRow(i);
+                //case "Viwe_check":
+                //    for (int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
+                //    {
+                //        if (this.ASPxGridView1.Selection.IsRowSelected(i))
+                //        {
+                //            DataRowView checkinfo = (DataRowView)ASPxGridView1.GetRow(i);
 
-                            Session["Checkid"] = checkinfo.Row.ItemArray[0];
-                        }
-                    }
-                    break;
+                //            Session["Checkid"] = checkinfo.Row.ItemArray[0];
+                //        }
+                //    }
+                //    break;
 
-                case "Download":
-                    for (int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
-                    {
-                        if (this.ASPxGridView1.Selection.IsRowSelected(i))
-                        {
-                            DataRowView checkinfo = (DataRowView)ASPxGridView1.GetRow(i);
+                //case "Download":
+                //    for (int i = 0; i < this.ASPxGridView1.VisibleRowCount; i++)
+                //    {
+                //        if (this.ASPxGridView1.Selection.IsRowSelected(i))
+                //        {
+                //            DataRowView checkinfo = (DataRowView)ASPxGridView1.GetRow(i);
 
-                            String path = checkinfo.Row.ItemArray[5].ToString();
-                            path = path.Replace("H:/MRI_Data", "");
-                            //path.Split(' ');
-                            String[] paths = path.Split('/');
-                            Session["root"] = paths[0];
-                            path = path + "/";
-                            Session["path"] = path;
-                        }
-                    }
-                    break;
+                //            String path = checkinfo.Row.ItemArray[5].ToString();
+                //            path = path.Replace("H:/MRI_Data", "");
+                //            //path.Split(' ');
+                //            String[] paths = path.Split('/');
+                //            Session["root"] = paths[0];
+                //            path = path + "/";
+                //            Session["path"] = path;
+                //        }
+                //    }
+                //    break;
             }
         }
 

@@ -10,7 +10,7 @@
 namespace researchDataBrowsingInformationSystem {
     
     
-    public partial class biao1 {
+    public partial class biaoAdmin {
         
         /// <summary>
         /// form1 控件。
@@ -31,6 +31,42 @@ namespace researchDataBrowsingInformationSystem {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
+        /// ScriptManager1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Viwe_check 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Viwe_check;
+        
+        /// <summary>
+        /// Download 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Download;
+        
+        /// <summary>
         /// ASPxGridView1 控件。
         /// </summary>
         /// <remarks>
@@ -40,22 +76,31 @@ namespace researchDataBrowsingInformationSystem {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// Viwe_check 控件。
+        /// New 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Viwe_check;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton New;
         
         /// <summary>
-        /// Download 控件。
+        /// Edit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Download;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Edit;
+        
+        /// <summary>
+        /// Delete 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton Delete;
         
         /// <summary>
         /// ASPxPopupControl1 控件。

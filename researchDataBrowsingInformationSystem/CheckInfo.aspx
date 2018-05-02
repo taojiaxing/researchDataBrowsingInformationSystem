@@ -66,14 +66,14 @@
                     </dx:GridViewDataTextColumn>
                 </Columns>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConflictDetection="CompareAllValues" 
-                ConnectionString="<%$ ConnectionStrings:testConnectionString %>" 
-                DeleteCommand="DELETE FROM checkinfo WHERE (Checkid = ?)" 
-                InsertCommand="INSERT INTO checkinfo (Id, Checkid, Type, DoctorCheckID, Info, Remark) VALUES (?, ?, ?, ?, ?, ?)" 
-                OldValuesParameterFormatString="original_{0}" 
-                SelectCommand="SELECT * FROM checkinfo WHERE Checkid = ?" 
-                UpdateCommand="UPDATE checkinfo SET Id = ?, Type = ?, DoctorCheckID = ?, Info = ?, Remark = ? WHERE (Checkid = ?)" 
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+                ConflictDetection="CompareAllValues"
+                ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
+                DeleteCommand="DELETE FROM checkinfo WHERE (Checkid = ?)"
+                InsertCommand="INSERT INTO checkinfo (Id, Checkid, Type, DoctorCheckID, Info, Remark) VALUES (?, ?, ?, ?, ?, ?)"
+                OldValuesParameterFormatString="original_{0}"
+                SelectCommand="SELECT * FROM checkinfo WHERE Checkid = ?"
+                UpdateCommand="UPDATE checkinfo SET Id = ?, Type = ?, DoctorCheckID = ?, Info = ?, Remark = ? WHERE (Checkid = ?)"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <SelectParameters>
                     <asp:Parameter Name="Checkid" Type="String" />

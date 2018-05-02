@@ -40,6 +40,11 @@ public class CustomProvider : FileSystemProviderBase
         _creds = creds;
     }
 
+    public override void CopyFile(FileManagerFile file, FileManagerFolder newParentFolder)
+    {
+        base.CopyFile(file, newParentFolder);
+    }
+
     public override bool Exists(FileManagerFile file)
     {
         return base.Exists(file);

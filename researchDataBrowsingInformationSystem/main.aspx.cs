@@ -8,23 +8,19 @@ namespace researchDataBrowsingInformationSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Role"].ToString() == "1")
+            if (Session["Role"] != null)
             {
-                mainIfr.Attributes.Add("src", "biao.aspx");
-            }
-            else if (Session["Role"].ToString() == "2")
-            {
-                if (Session["Right"].ToString() == "1")
+                if (Session["Role"].ToString() == "1")
                 {
-                    mainIfr.Attributes.Add("src", "biao1.aspx");
+                    mainIfr.Attributes.Add("src", "biaoAdmin.aspx");
                 }
-                if (Session["Right"].ToString() == "2")
+                else if (Session["Role"].ToString() == "2")
                 {
-                    mainIfr.Attributes.Add("src", "biao2.aspx");
-                }
-                if (Session["Right"].ToString() == "3")
-                {
-                    mainIfr.Attributes.Add("src", "biao3.aspx");
+                    if (Session["Right"].ToString() == "4") {}
+                    else
+                    {
+                        mainIfr.Attributes.Add("src", "biao.aspx");
+                    }
                 }
             }
             //确保页面是第一次被访问
@@ -32,7 +28,6 @@ namespace researchDataBrowsingInformationSystem
             {
                 CheckPageStatus();
             }
-            
         }
 
         //通过判断Session["UserName"]是否为空检查页面是否已登录（登录成功时会为Session["UserName"]注入值，就不空了。。否则就认为没有登录）。
@@ -53,7 +48,7 @@ namespace researchDataBrowsingInformationSystem
                     {
                         name = Session["UserName"].ToString();
                     }
-                    lblWelcome.Text = "欢迎登录，" + name; 
+                    lblWelcome.Text = "欢迎登录，" + name;
                     btnReloinfo.Visible = true;
                     btnPatientInfo.Visible = true;
                 }
@@ -149,21 +144,11 @@ namespace researchDataBrowsingInformationSystem
         {
             if (Session["Role"].ToString() == "1")
             {
-                mainIfr.Attributes.Add("src", "biao.aspx");
-            }else if(Session["Role"].ToString() == "2")
+                mainIfr.Attributes.Add("src", "biaoAdmin.aspx");
+            }
+            else if (Session["Role"].ToString() == "2")
             {
-                if (Session["Right"].ToString() == "1")
-                {
-                    mainIfr.Attributes.Add("src", "biao1.aspx");
-                }
-                if (Session["Right"].ToString() == "2")
-                {
-                    mainIfr.Attributes.Add("src", "biao2.aspx");
-                }
-                if (Session["Right"].ToString() == "3")
-                {
-                    mainIfr.Attributes.Add("src", "biao3.aspx");
-                }
+                mainIfr.Attributes.Add("src", "biao.aspx");
             }
         }
     }
