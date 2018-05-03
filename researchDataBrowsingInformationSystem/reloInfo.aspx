@@ -39,6 +39,8 @@
     <div>
         <form id="form1" runat="server">
             <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
+                <SettingsPager NumericButtonCount="8" PageSize="8">
+                </SettingsPager>
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <SettingsSearchPanel Visible="True" />

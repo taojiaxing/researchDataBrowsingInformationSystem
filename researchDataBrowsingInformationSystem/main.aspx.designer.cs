@@ -94,15 +94,6 @@ namespace researchDataBrowsingInformationSystem {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl left;
         
         /// <summary>
-        /// btnReloinfo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReloinfo;
-        
-        /// <summary>
         /// btnPatientInfo 控件。
         /// </summary>
         /// <remarks>
@@ -110,6 +101,15 @@ namespace researchDataBrowsingInformationSystem {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPatientInfo;
+        
+        /// <summary>
+        /// btnReloinfo 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReloinfo;
         
         /// <summary>
         /// mainIfr 控件。

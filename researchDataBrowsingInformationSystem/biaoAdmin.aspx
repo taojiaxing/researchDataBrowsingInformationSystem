@@ -127,6 +127,8 @@
             <dx:ASPxGridView ID="ASPxGridView1" runat="server"
                 AutoGenerateColumns="False" DataSourceID="SqlDataSource1"
                 KeyFieldName="StudyInstanceUID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
+                <SettingsPager NumericButtonCount="8" PageSize="8">
+                </SettingsPager>
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
                 <ClientSideEvents CustomButtonClick="onGrid1ButtonClick" />
                 <SettingsBehavior AllowSelectByRowClick="True" />
@@ -217,8 +219,8 @@
             PopupHorizontalAlign="WindowCenter"
             PopupVerticalOffset="40"
             ShowFooter="True"
-            Width="1400px"
-            Height="544px"
+            Width="1200px"
+            Height="640px"
             FooterText="欢迎使用科研数据浏览信息系统"
             HeaderText="查看系统应用详细信息，可窗口拖动并调整尺寸大小哦！"
             ClientInstanceName="ASPxPopupControl2"

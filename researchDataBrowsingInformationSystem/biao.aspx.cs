@@ -23,9 +23,11 @@ namespace researchDataBrowsingInformationSystem
                     else if (Session["Right"].ToString() == "2")
                     {
                         this.Viwe_check.Visible = true;
+                        this.Download.Visible = true;
                     }
                     else if (Session["Right"].ToString() == "3")
                     {
+                        this.Viwe_check.Visible = true;
                     }
                     this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
                     this.ASPxGridView1.DataBind();

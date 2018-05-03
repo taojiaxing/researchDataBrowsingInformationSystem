@@ -57,7 +57,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="padding: 0px; margin: 0px">
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConflictDetection="CompareAllValues"
                 ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
