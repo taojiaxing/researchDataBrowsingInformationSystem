@@ -18,6 +18,7 @@
         #mainIfr {
             margin-top: 0px;
         }
+
         .auto-style2 {
             width: 69px;
             height: 76px;
@@ -27,12 +28,12 @@
 <body style="margin: 0px; height: 100%;">
     <div>
         <form id="form1" runat="server">
-            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 96px; background-color:  #0A3F61;">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 96px; background-color: #0A3F61;">
                 <tr>
-                    <td style="width:12%; text-align:center">
+                    <td style="width: 12%; text-align: center">
 
-                    <img alt="" class="auto-style2" src="img/untitled.bmp" /></td>
-                    <td style="font-weight: bold; font-size: 20px; color: #FFFFFF; font-family: 'Bell MT'; " class="auto-style1">科研数据浏览信息系统——华西核磁共振研究中心HMRRC<br />
+                        <img alt="" class="auto-style2" src="img/untitled.bmp" /></td>
+                    <td style="font-weight: bold; font-size: 20px; color: #FFFFFF; font-family: 'Bell MT';" class="auto-style1">科研数据浏览信息系统——华西核磁共振研究中心HMRRC<br />
                     </td>
                     <td style="vertical-align: middle; text-align: left">
                         <asp:Panel ID="pnlLogin" runat="server" Height="30px" Width="100%">
@@ -66,9 +67,9 @@
             </div>
         </form>
 
-        <div id="Bottom" style="background-color: #0A3F61; color: #FFFFFF; font-size: small;" >
+        <div id="Bottom" style="background-color: #0A3F61; color: #FFFFFF; font-size: small;">
             <span class="firstSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp; 科研数据浏览信息系统欢迎您:&nbsp;<%:Session["UserName"].ToString()%></span>
+                &nbsp;&nbsp;&nbsp; 科研数据浏览信息系统欢迎您:&nbsp;<%:Session["UserName"].ToString()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2018华西医院磁共振临床研究中心 版权所有. </span>
         </div>
     </div>
 </body>

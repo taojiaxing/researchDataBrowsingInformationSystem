@@ -16,7 +16,7 @@ namespace researchDataBrowsingInformationSystem
                 }
                 else if (Session["Role"].ToString() == "2")
                 {
-                    if (Session["Right"].ToString() == "4") {}
+                    if (Session["Right"].ToString() == "4") { }
                     else
                     {
                         mainIfr.Attributes.Add("src", "biao.aspx");

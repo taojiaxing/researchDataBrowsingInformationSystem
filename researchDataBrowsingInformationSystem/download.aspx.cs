@@ -125,7 +125,6 @@ namespace researchDataBrowsingInformationSystem
                     this.DownloadDirBtn.Visible = true;
                 }
             }
-            
         }
     }
 }

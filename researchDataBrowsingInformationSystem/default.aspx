@@ -16,26 +16,52 @@
         #main {
             height: 662px;
         }
+
+        .auto-style2 {
+            width: 69px;
+            height: 76px;
+        }
     </style>
 </head>
 <body style="margin: 0px; height: 822px;">
-    <div id="main">
-        <p style="vertical-align: middle; text-align: center; font-weight: bold; font-size: 25px; color: #003366; font-family: Arial;" class="auto-style1">科研数据浏览信息系统</p>
+    <div id="main" style="background-color: #093F61; color: #FFFFFF; height: 900px">
         <form id="form1" runat="server">
-            <table border="0" cellpadding="0" cellspacing="0" style="width: 293px; height: 140px; margin-left: 40%; margin-top: 15%">
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 96px; background-color: #0A3F61;">
                 <tr>
-                    <td>用户名：<asp:TextBox ID="txbUserName" runat="server"></asp:TextBox></td>
+                    <td style="width: 12%; text-align: center">
+
+                        <img alt="" class="auto-style2" src="img/untitled.bmp" /></td>
+                    <td style="font-weight: bold; font-size: 20px; color: #FFFFFF; font-family: 'Bell MT';" class="auto-style1">科研数据浏览信息系统——华西核磁共振研究中心HMRRC<br />
+                    </td>
+                    <td style="vertical-align: middle; text-align: left">
+                    </td>
+                </tr>
+            </table>
+
+            <table border="0" cellpadding="0" cellspacing="0" style="width: 293px; height: 140px; margin-left: 40%; margin-top: 15%; border:4px solid #808080">
+
+                <tr>
+                    <td style="width: 60px">用户名:</td>
+                    <td>
+                        <asp:TextBox ID="txbUserName" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td>密码：&nbsp;&nbsp;
+                    <td style="width: 60px">密码:</td>
+                    <td>
                         <asp:TextBox ID="txbUserPassword" runat="server" TextMode="Password"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" /></td>
+                    <td style="width: 60px"></td>
+                    <td>
+                        <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" /></td>
                 </tr>
             </table>
             <br />
         </form>
     </div>
+    <div id="Bottom" style="background-color: #0A3F61; color: #FFFFFF; font-size: small; margin-bottom:2px; position:absolute; width:100%">
+            <span class="firstSpan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp; 201<span>8华西医院磁共振临床研究中心 版权所有.</span></span>
+        </div>
 </body>
 </html>
