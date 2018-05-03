@@ -178,7 +178,6 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="StudyDescription" VisibleIndex="15" Width="10px" Caption="Study Description">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewCommandColumn Caption="选择" ShowSelectCheckbox="true" Width="20px"></dx:GridViewCommandColumn>
                 </Columns>
             </dx:ASPxGridView>
         </div>
