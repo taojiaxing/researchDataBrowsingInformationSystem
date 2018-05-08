@@ -36,6 +36,11 @@
                     <td style="vertical-align: middle; text-align: left">
                     </td>
                 </tr>
+                <tr style="height:6px; background-color:#000000">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             </table>
 
             <table border="0" cellpadding="0" cellspacing="0" style="width: 293px; height: 140px; margin-left: 40%; margin-top: 15%; border:4px solid #808080">

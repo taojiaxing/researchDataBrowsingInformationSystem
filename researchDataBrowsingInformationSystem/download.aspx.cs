@@ -16,6 +16,10 @@ namespace researchDataBrowsingInformationSystem
             CustomProvider.Dir = _dir;
             CustomProvider.FtpIP = _ftpIP;
             check();
+            for (int i = 0; i < 5; i++)
+            {
+                this.ASPxFileManager1.Refresh();
+            }
         }
 
         /// <summary>

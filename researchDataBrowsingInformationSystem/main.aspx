@@ -50,6 +50,11 @@
                         </asp:Panel>
                     </td>
                 </tr>
+                <tr style="height:6px; background-color:#000000">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             </table>
 
             <!--表内容-->
