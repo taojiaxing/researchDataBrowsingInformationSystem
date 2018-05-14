@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="31e16bbb2636485aaff86e3d8d9c27d5" Name="Diagram1">
+        <EntityTypeShape EntityType="DataModel.biao" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.checkinfo" Width="1.5" PointX="2.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.project" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.project_manager" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.project_researcher" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.roleinfo" Width="1.5" PointX="4.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataModel.user" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="DataModel.FK_project_manager_project" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModel.FK_project_researcher_project" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModel.FK_project_manager_user" ManuallyRouted="false" />
+        <AssociationConnector Association="DataModel.FK_project_researcher_user" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -136,10 +136,6 @@
                 <Columns>
                     <dx:GridViewCommandColumn Caption="操作" ShowClearFilterButton="True" VisibleIndex="16">
                         <CustomButtons>
-                            <%--<dx:GridViewCommandColumnCustomButton ID="Viwe_check" Text="查看检查结果">
-                            </dx:GridViewCommandColumnCustomButton>
-                            <dx:GridViewCommandColumnCustomButton ID="Download" Text="查看扫描结果">
-                            </dx:GridViewCommandColumnCustomButton>--%>
                             <dx:GridViewCommandColumnCustomButton ID="New" Text="新建" Visibility="FilterRow">
                             </dx:GridViewCommandColumnCustomButton>
                             <dx:GridViewCommandColumnCustomButton ID="Edit" Text="编辑">

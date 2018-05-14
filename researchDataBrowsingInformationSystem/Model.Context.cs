@@ -13,10 +13,10 @@ namespace researchDataBrowsingInformationSystem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DataEntities : DbContext
+    public partial class testEntities : DbContext
     {
-        public DataEntities()
-            : base("name=DataEntities")
+        public testEntities()
+            : base("name=testEntities")
         {
         }
     
@@ -25,9 +25,12 @@ namespace researchDataBrowsingInformationSystem
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<checkinfo> checkinfoes { get; set; }
-        public virtual DbSet<pathinfo> pathinfoes { get; set; }
-        public virtual DbSet<patientinfo> patientinfoes { get; set; }
-        public virtual DbSet<roleinfo> roleinfoes { get; set; }
+        public virtual DbSet<biao> biao { get; set; }
+        public virtual DbSet<checkinfo> checkinfo { get; set; }
+        public virtual DbSet<project> project { get; set; }
+        public virtual DbSet<project_manager> project_manager { get; set; }
+        public virtual DbSet<project_researcher> project_researcher { get; set; }
+        public virtual DbSet<roleinfo> roleinfo { get; set; }
+        public virtual DbSet<user> user { get; set; }
     }
 }

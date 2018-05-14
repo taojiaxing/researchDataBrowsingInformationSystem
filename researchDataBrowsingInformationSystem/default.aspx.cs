@@ -83,21 +83,20 @@ namespace researchDataBrowsingInformationSystem
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            using (DataEntities db = new DataEntities())
+            using (testEntities db = new testEntities())
             {
-                var userDetails = db.roleinfoes.Where(x => x.Name == txbUserName.Text && x.Psd == txbUserPassword.Text).FirstOrDefault();
+                var userDetails = db.user.Where(x => x.ID == txbUserName.Text && x.Psd == txbUserPassword.Text).FirstOrDefault();
                 if (userDetails != null)
                 {
                     Session["UserName"] = userDetails.Name;
                     Session["Message"] = "登录成功！";
                     Session["Role"] = userDetails.Role;
-                    Session["Right"] = userDetails.Right;
                     Response.Redirect("main.aspx");
                 }
                 else
                 {
                     Session["Message"] = "登录失败。请重新登录。";
-                    Response.Redirect("default.aspx");
+                    Response.Write("<script>alert('登录失败，请重新登录。');</script>");
                 }
             }
         }

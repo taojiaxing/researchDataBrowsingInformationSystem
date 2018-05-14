@@ -35,20 +35,15 @@ namespace researchDataBrowsingInformationSystem
         {
             if (Session["Role"] != null)
             {
+                pnlLogin.Visible = false;
+                pnlWelcome.Visible = true;
+                String name;
+                name = Session["UserName"].ToString();
+                lblWelcome.Text = "欢迎登录，" + name;
                 if (Session["Role"].ToString() == "1")
                 {
                     pnlLogin.Visible = false;
-                    pnlWelcome.Visible = true;
-                    String name;
-                    if (Session["UserName"] == null)
-                    {
-                        name = "";
-                    }
-                    else
-                    {
-                        name = Session["UserName"].ToString();
-                    }
-                    lblWelcome.Text = "欢迎登录，" + name;
+                    
                     btnReloinfo.Visible = true;
                     btnPatientInfo.Visible = true;
                 }
@@ -57,34 +52,10 @@ namespace researchDataBrowsingInformationSystem
                     if (Session["Right"].ToString() == "4")
                     {
                         btnPatientInfo.Visible = false;
-                        pnlLogin.Visible = false;
-                        pnlWelcome.Visible = true;
-                        String name;
-                        if (Session["UserName"] == null)
-                        {
-                            name = "";
-                        }
-                        else
-                        {
-                            name = Session["UserName"].ToString();
-                        }
-                        lblWelcome.Text = "欢迎登录，" + name;
                         btnReloinfo.Visible = false;
                     }
                     else
                     {
-                        pnlLogin.Visible = false;
-                        pnlWelcome.Visible = true;
-                        String name;
-                        if (Session["UserName"] == null)
-                        {
-                            name = "";
-                        }
-                        else
-                        {
-                            name = Session["UserName"].ToString();
-                        }
-                        lblWelcome.Text = "欢迎登录，" + name;
                         btnReloinfo.Visible = false;
                         btnPatientInfo.Visible = true;
                     }
@@ -100,23 +71,23 @@ namespace researchDataBrowsingInformationSystem
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            using (DataEntities db = new DataEntities())
-            {
-                var userDetails = db.roleinfoes.Where(x => x.Name == txbUserName.Text && x.Psd == txbUserPassword.Text).FirstOrDefault();
-                if (userDetails != null)
-                {
-                    Session["UserName"] = userDetails.Name;
-                    Session["Message"] = "登录成功！";
-                    Session["Role"] = userDetails.Role;
-                    Session["Right"] = userDetails.Right;
-                    Response.Redirect("default.aspx");
-                }
-                else
-                {
-                    Session["Message"] = "登录失败。请重新登录。";
-                    Response.Redirect("default.aspx");
-                }
-            }
+            ////using (DataEntities db = new DataEntities())
+            ////{
+            ////    var userDetails = db.roleinfoes.Where(x => x.Name == txbUserName.Text && x.Psd == txbUserPassword.Text).FirstOrDefault();
+            ////    if (userDetails != null)
+            ////    {
+            ////        Session["UserName"] = userDetails.Name;
+            ////        Session["Message"] = "登录成功！";
+            ////        Session["Role"] = userDetails.Role;
+            ////        Session["Right"] = userDetails.Right;
+            ////        Response.Redirect("default.aspx");
+            ////    }
+            ////    else
+            ////    {
+            ////        Session["Message"] = "登录失败。请重新登录。";
+            ////        Response.Redirect("default.aspx");
+            ////    }
+            ////}
         }
 
         protected void btnQuit_Click(object sender, EventArgs e)
@@ -134,7 +105,7 @@ namespace researchDataBrowsingInformationSystem
 
         protected void Reloinfo_Click(object sender, EventArgs e)
         {
-            if (Session["Role"].ToString() == "1")
+            if (Session["Role"].ToString() == "0")
             {
                 mainIfr.Attributes.Add("src", "reloInfo.aspx");
             }
@@ -142,11 +113,11 @@ namespace researchDataBrowsingInformationSystem
 
         protected void PatientInfo_Click(object sender, EventArgs e)
         {
-            if (Session["Role"].ToString() == "1")
+            if (Session["Role"].ToString() == "0")
             {
                 mainIfr.Attributes.Add("src", "biaoAdmin.aspx");
             }
-            else if (Session["Role"].ToString() == "2")
+            else if (Session["Role"].ToString() == "1")
             {
                 mainIfr.Attributes.Add("src", "biao.aspx");
             }

@@ -12,15 +12,14 @@ namespace researchDataBrowsingInformationSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class patientinfo
+    public partial class project_manager
     {
-        public string Id { get; set; }
-        public string DoctorID { get; set; }
-        public string Name { get; set; }
-        public string Sex { get; set; }
-        public int Height { get; set; }
-        public int Weitght { get; set; }
-        public System.DateTime BirthDate { get; set; }
+        public int ID { get; set; }
+        public string project_id { get; set; }
+        public string Use_id { get; set; }
         public string Remark { get; set; }
+    
+        public virtual project project { get; set; }
+        public virtual user user { get; set; }
     }
 }

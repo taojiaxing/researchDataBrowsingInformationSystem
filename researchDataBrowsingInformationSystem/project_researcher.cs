@@ -12,13 +12,14 @@ namespace researchDataBrowsingInformationSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class pathinfo
+    public partial class project_researcher
     {
-        public string Id { get; set; }
-        public string StuID { get; set; }
-        public string Progect { get; set; }
-        public string Path { get; set; }
-        public System.DateTime Date { get; set; }
+        public int ID { get; set; }
+        public string project_id { get; set; }
+        public string User_id { get; set; }
         public string Remark { get; set; }
+    
+        public virtual project project { get; set; }
+        public virtual user user { get; set; }
     }
 }

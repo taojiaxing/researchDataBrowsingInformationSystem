@@ -9,7 +9,7 @@ namespace researchDataBrowsingInformationSystem
         {
             if (Session["Role"] != null)
             {
-                if (Session["Role"].ToString() != "1")
+                if (Session["Role"].ToString() != "0")
                 {
                     Response.Redirect("default.aspx");
                 }
