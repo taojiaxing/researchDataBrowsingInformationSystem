@@ -31,6 +31,7 @@
                     </td>
                 </tr>
             </table>
+            <iframe id="mainIfr" runat="server" name="mainIfr" frameborder="no" style="padding: 0px; margin: 0px; float:initial" width="100%" height=600px src=""></iframe>
         </div>
     </form>
 </body>
