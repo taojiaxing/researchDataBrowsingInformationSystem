@@ -28,7 +28,7 @@
 <body>
     <div>
         <form id="form1" runat="server">
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Id" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
+            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="ID" OnCustomButtonCallback="ASPxGridView1_CustomButtonCallback" Theme="Default">
                 <SettingsPager NumericButtonCount="8" PageSize="8">
                 </SettingsPager>
                 <Settings ShowFilterRow="True" ShowGroupPanel="True" />
@@ -76,14 +76,14 @@
                 ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>">
                 <DeleteParameters>
-                    <asp:Parameter Name="original_Id" Type="String" />
+                    <asp:Parameter Name="original_ID" Type="String" />
                     <asp:Parameter Name="original_Name" Type="String" />
                     <asp:Parameter Name="original_Psd" Type="String" />
                     <asp:Parameter Name="original_Role" Type="Int32" />
                     <asp:Parameter Name="original_Remark" Type="String" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="Id" Type="String" />
+                    <asp:Parameter Name="ID" Type="String" />
                     <asp:Parameter Name="Name" Type="String" />
                     <asp:Parameter Name="Psd" Type="String" />
                     <asp:Parameter Name="Role" Type="Int32" />
@@ -95,7 +95,7 @@
                     <asp:Parameter Name="Psd" Type="String" />
                     <asp:Parameter Name="Role" Type="Int32" />
                     <asp:Parameter Name="Remark" Type="String" />
-                    <asp:Parameter Name="original_Id" Type="String" />
+                    <asp:Parameter Name="original_ID" Type="String" />
                     <asp:Parameter Name="original_Name" Type="String" />
                     <asp:Parameter Name="original_Psd" Type="String" />
                     <asp:Parameter Name="original_Role" Type="Int32" />

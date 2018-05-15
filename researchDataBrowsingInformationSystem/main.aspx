@@ -64,7 +64,7 @@
                     <asp:Button ID="btnPatientInfo" runat="server" Text="资料管理" Width="100%" OnClick="PatientInfo_Click" />
                     <br />
                     <br />
-                    <asp:Button ID="btnReloinfo" runat="server" Text="权限管理" Width="100%" OnClick="Reloinfo_Click" />
+                    <asp:Button ID="btnReloinfo" runat="server" Text="用户管理" Width="100%" OnClick="Reloinfo_Click" />
                     <br />
                 </div>
                 <iframe id="mainIfr" runat="server" name="mainIfr" frameborder="no" style="padding: 0px; margin: 0px; float: right" width="88%" height="100%" src=""></iframe>

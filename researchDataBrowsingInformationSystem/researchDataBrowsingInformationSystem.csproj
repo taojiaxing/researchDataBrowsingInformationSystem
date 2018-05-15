@@ -128,7 +128,10 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Newproject.aspx" />
+    <Content Include="projectManage.aspx" />
     <Content Include="reloInfo.aspx" />
+    <Content Include="viewProject.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -202,6 +205,20 @@
     <Compile Include="project.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Newproject.aspx.cs">
+      <DependentUpon>Newproject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Newproject.aspx.designer.cs">
+      <DependentUpon>Newproject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projectManage.aspx.cs">
+      <DependentUpon>projectManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projectManage.aspx.designer.cs">
+      <DependentUpon>projectManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="project_manager.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -221,6 +238,13 @@
     </Compile>
     <Compile Include="user.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="viewProject.aspx.cs">
+      <DependentUpon>viewProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewProject.aspx.designer.cs">
+      <DependentUpon>viewProject.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
