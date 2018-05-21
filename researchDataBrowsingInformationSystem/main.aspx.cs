@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Web.UI;
 
 namespace researchDataBrowsingInformationSystem
@@ -43,21 +42,21 @@ namespace researchDataBrowsingInformationSystem
                 if (Session["Role"].ToString() == "1")
                 {
                     pnlLogin.Visible = false;
-                    
-                    btnReloinfo.Visible = true;
-                    btnPatientInfo.Visible = true;
+
+                    //btnReloinfo.Visible = true;
+                    //btnPatientInfo.Visible = true;
                 }
                 else if (Session["Role"].ToString() == "2")
                 {
                     if (Session["Right"].ToString() == "4")
                     {
-                        btnPatientInfo.Visible = false;
-                        btnReloinfo.Visible = false;
+                        //btnPatientInfo.Visible = false;
+                        //btnReloinfo.Visible = false;
                     }
                     else
                     {
-                        btnReloinfo.Visible = false;
-                        btnPatientInfo.Visible = true;
+                        //btnReloinfo.Visible = false;
+                        //btnPatientInfo.Visible = true;
                     }
                 }
             }
@@ -103,24 +102,24 @@ namespace researchDataBrowsingInformationSystem
             }
         }
 
-        protected void Reloinfo_Click(object sender, EventArgs e)
-        {
-            if (Session["Role"].ToString() == "0")
-            {
-                mainIfr.Attributes.Add("src", "reloInfo.aspx");
-            }
-        }
+        //protected void Reloinfo_Click(object sender, EventArgs e)
+        //{
+        //    if (Session["Role"].ToString() == "0")
+        //    {
+        //        mainIfr.Attributes.Add("src", "reloInfo.aspx");
+        //    }
+        //}
 
-        protected void PatientInfo_Click(object sender, EventArgs e)
-        {
-            if (Session["Role"].ToString() == "0")
-            {
-                mainIfr.Attributes.Add("src", "biaoAdmin.aspx");
-            }
-            else if (Session["Role"].ToString() == "1")
-            {
-                mainIfr.Attributes.Add("src", "biao.aspx");
-            }
-        }
+        //protected void PatientInfo_Click(object sender, EventArgs e)
+        //{
+        //    if (Session["Role"].ToString() == "0")
+        //    {
+        //        mainIfr.Attributes.Add("src", "biaoAdmin.aspx");
+        //    }
+        //    else if (Session["Role"].ToString() == "1")
+        //    {
+        //        mainIfr.Attributes.Add("src", "biao.aspx");
+        //    }
+        //}
     }
 }

@@ -37,12 +37,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table style="height:100px; width:100%">
+            <table style="height: 100px; width: 100%">
                 <tr>
-                    <td style="width:10%"></td>
-                    <td style="width:6%">选择日期:</td>
-                    <td style="width:6%"><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="StudyDate"></asp:DropDownList></td>
-                    <td><asp:Button ID="Button1" runat="server" Text="查询" /></td>
+                    <td style="width: 10%"></td>
+                    <td style="width: 6%">选择日期:</td>
+                    <td style="width: 6%">
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="StudyDate"></asp:DropDownList></td>
+                    <td>
+                        <asp:Button ID="Button1" runat="server" Text="查询" /></td>
                 </tr>
             </table>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
