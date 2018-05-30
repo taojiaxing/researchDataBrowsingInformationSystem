@@ -92,6 +92,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addProject.aspx" />
+    <Content Include="addUser.aspx" />
     <Content Include="biaoBydate.aspx" />
     <Content Include="biaoAdmin.aspx" />
     <Content Include="biao.aspx" />
@@ -138,6 +140,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addProject.aspx.cs">
+      <DependentUpon>addProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addProject.aspx.designer.cs">
+      <DependentUpon>addProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addUser.aspx.cs">
+      <DependentUpon>addUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addUser.aspx.designer.cs">
+      <DependentUpon>addUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="biao.cs">
       <DependentUpon>Model.tt</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
