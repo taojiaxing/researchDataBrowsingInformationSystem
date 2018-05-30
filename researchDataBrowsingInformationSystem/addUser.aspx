@@ -14,18 +14,16 @@
         <div>
             <table style="width: 100%">
                 <tr>
-                    <td style="width: 10%; text-align: left; float: left"></td>
-                    <td style="width: 10%">项目：<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataValueField="ID"></asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:testConnectionString %>" ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
-                            SelectCommand="SELECT   * FROM   project"></asp:SqlDataSource>
-                    </td>
-                    <td style="width: 10%">
-                        <asp:Button ID="Button1" runat="server" Text="选择" OnClick="Button1_Click" /></td>
-                    <td style="width: 70%"></td>
+                    <td style="width: 15%"></td>
+                    <td style="width: 10%">用户ID：<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                    <td style="width: 10%">用户名：<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+                    <td style="width: 10%">密码：<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td>
+                    <td style="width: 55%">
+                        <br />
+
+                        <asp:Button ID="Button1" runat="server" Text="添加" OnClick="Button1_Click" /></td>
                 </tr>
             </table>
-            <dx:ASPxGridView ID="ASPxGridView1" runat="server" DataSourceID="SqlDataSource1">
-            </dx:ASPxGridView>
         </div>
     </form>
 </body>

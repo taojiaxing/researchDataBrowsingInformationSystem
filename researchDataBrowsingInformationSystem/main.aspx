@@ -130,14 +130,14 @@
                     <div id="left_nav">
                         <a href="#" class="Link" onclick="show('First_one')" style="color: #FFFFFF">用户管理</a>
                         <div id="First_one" style="display: block;">
-                            <a href="#" class="List">添加用户</a>
+                            <a href="../addUser.aspx" target="mainIfr" class="List">添加用户</a>
                             <a href="#" class="List">用户信息</a>
-                            <%--<a href="#" class="List">Three</a>--%>
                         </div>
                         <a href="#" class="Link" onclick="show('Second_one')" style="color: #FFFFFF">项目管理</a>
                         <div id="Second_one" style="display: none;">
                             <a href="../viewProject.aspx" target="mainIfr" class="List">查看项目数据</a>
                             <a href="../addProject.aspx" target="mainIfr" class="List">添加项目</a>
+                            <a href="#" class="List">管理项目参与者</a>
                             <%--<a href="#" class="List">Three</a> --%>
                         </div>
                         <a href="#" class="Link" onclick="show('Third_one')" style="color: #FFFFFF">扫描数据管理</a>
