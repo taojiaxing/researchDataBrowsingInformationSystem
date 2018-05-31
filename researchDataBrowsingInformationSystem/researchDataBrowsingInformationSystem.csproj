@@ -103,6 +103,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="main2.aspx" />
+    <Content Include="main1.aspx" />
     <Content Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
@@ -214,6 +216,20 @@
     </Compile>
     <Compile Include="download.aspx.designer.cs">
       <DependentUpon>download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main2.aspx.cs">
+      <DependentUpon>main2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main2.aspx.designer.cs">
+      <DependentUpon>main2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main1.aspx.cs">
+      <DependentUpon>main1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main1.aspx.designer.cs">
+      <DependentUpon>main1.aspx</DependentUpon>
     </Compile>
     <Compile Include="main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>

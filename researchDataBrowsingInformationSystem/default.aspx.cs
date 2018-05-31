@@ -92,7 +92,18 @@ namespace researchDataBrowsingInformationSystem
                     Session["UserName"] = userDetails.Name;
                     Session["Message"] = "登录成功！";
                     Session["Role"] = userDetails.Role;
-                    Response.Redirect("main.aspx");
+                    if (userDetails.Role.ToString() == "0")
+                    {
+                        Response.Redirect("main.aspx");
+                    }
+                    else if (userDetails.Role.ToString() == "1")
+                    {
+                        Response.Redirect("main1.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("main2.aspx");
+                    }
                 }
                 else
                 {
