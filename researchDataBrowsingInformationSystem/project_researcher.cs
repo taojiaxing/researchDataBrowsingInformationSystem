@@ -17,6 +17,7 @@ namespace researchDataBrowsingInformationSystem
         public int ID { get; set; }
         public string project_id { get; set; }
         public string User_id { get; set; }
+        public sbyte Right { get; set; }
         public string Remark { get; set; }
     
         public virtual project project { get; set; }

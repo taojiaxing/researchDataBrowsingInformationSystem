@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addProject.aspx" />
+    <Content Include="addResearcher.aspx" />
     <Content Include="addUser.aspx" />
     <Content Include="biaoBydate.aspx" />
     <Content Include="biaoAdmin.aspx" />
@@ -133,6 +134,8 @@
     </Content>
     <Content Include="Newproject.aspx" />
     <Content Include="projectManage.aspx" />
+    <Content Include="projectResearcher.aspx" />
+    <Content Include="projectManager.aspx" />
     <Content Include="userInfo.aspx" />
     <Content Include="viewProject.aspx" />
     <Content Include="Web.config">
@@ -146,6 +149,13 @@
     </Compile>
     <Compile Include="addProject.aspx.designer.cs">
       <DependentUpon>addProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addResearcher.aspx.cs">
+      <DependentUpon>addResearcher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addResearcher.aspx.designer.cs">
+      <DependentUpon>addResearcher.aspx</DependentUpon>
     </Compile>
     <Compile Include="addUser.aspx.cs">
       <DependentUpon>addUser.aspx</DependentUpon>
@@ -243,6 +253,20 @@
     </Compile>
     <Compile Include="projectManage.aspx.designer.cs">
       <DependentUpon>projectManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projectResearcher.aspx.cs">
+      <DependentUpon>projectResearcher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projectResearcher.aspx.designer.cs">
+      <DependentUpon>projectResearcher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="projectManager.aspx.cs">
+      <DependentUpon>projectManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projectManager.aspx.designer.cs">
+      <DependentUpon>projectManager.aspx</DependentUpon>
     </Compile>
     <Compile Include="project_manager.cs">
       <DependentUpon>Model.tt</DependentUpon>

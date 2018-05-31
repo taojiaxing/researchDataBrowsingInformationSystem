@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="projectManager.aspx.cs" Inherits="researchDataBrowsingInformationSystem.projectManager" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="projectResearcher.aspx.cs" Inherits="researchDataBrowsingInformationSystem.projectResearcher" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
@@ -46,7 +46,7 @@
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="项目ID" FieldName="project_id" VisibleIndex="1">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn Caption="负责人ID" FieldName="User_id" VisibleIndex="2">
+                    <dx:GridViewDataTextColumn Caption="参与者ID" FieldName="User_id" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="权限" FieldName="Right" VisibleIndex="3">
                     </dx:GridViewDataTextColumn>
@@ -56,11 +56,11 @@
             </dx:ASPxGridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"
                 ConnectionString="<%$ ConnectionStrings:testConnectionString %>"
-                DeleteCommand="DELETE FROM project_manager where(ID = ?)"
-                InsertCommand="INSERT INTO project_manager (ID, project_id, User_id, `Right`, Remark) VALUES        (?,?,?,?,?)"
+                DeleteCommand="DELETE FROM project_researcher where(ID = ?)"
+                InsertCommand="INSERT INTO project_researcher (ID, project_id, User_id, `Right`, Remark) VALUES        (?,?,?,?,?)"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
-                SelectCommand="SELECT project_manager.* FROM project_manager"
-                UpdateCommand="UPDATE       project_manager SET  project_id = ?, User_id = ?, `Right` = ?, Remark = ? Where(ID = ?)"
+                SelectCommand="SELECT project_researcher.* FROM project_researcher"
+                UpdateCommand="UPDATE       project_researcher SET  project_id = ?, User_id = ?, `Right` = ?, Remark = ? Where(ID = ?)"
                 ConflictDetection="CompareAllValues" OldValuesParameterFormatString="original_{0}">
                 <DeleteParameters>
                     <asp:Parameter Name="original_ID" Type="Int32" />

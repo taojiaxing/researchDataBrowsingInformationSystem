@@ -10,7 +10,7 @@
 namespace researchDataBrowsingInformationSystem {
     
     
-    public partial class projectManager {
+    public partial class projectResearcher {
         
         /// <summary>
         /// form1 控件。

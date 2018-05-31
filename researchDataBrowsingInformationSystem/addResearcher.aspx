@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewProject.aspx.cs" Inherits="researchDataBrowsingInformationSystem.viewProject" %>
-
-<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addResearcher.aspx.cs" Inherits="researchDataBrowsingInformationSystem.addResearcher" %>
 
 <!DOCTYPE html>
 
@@ -23,14 +21,16 @@
                             </SelectParameters>
                         </asp:SqlDataSource>
                     </td>
-                    <td style="width: 6%"></td>
+                    <td style="width: 20%">用户：<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataValueField="ID"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:testConnectionString %>" ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
+                            SelectCommand="SELECT   * FROM   `user`"></asp:SqlDataSource>
+                    </td>
 
-                    <td style="width: 74%">
-                        <asp:Button ID="Button1" runat="server" Text="查询" OnClick="Button1_Click" />
+                    <td style="width: 60%">
+                        <asp:Button ID="Button1" runat="server" Text="添加" OnClick="Button1_Click" />
                     </td>
                 </tr>
             </table>
-            <iframe id="mainIfr" runat="server" name="mainIfr" frameborder="no" style="padding: 0px; margin: 0px; float: initial" width="100%" height="600px" src=""></iframe>
         </div>
     </form>
 </body>

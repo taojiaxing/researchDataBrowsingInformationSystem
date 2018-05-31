@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Web;
+using System;
 using System.Data;
 
 namespace researchDataBrowsingInformationSystem
@@ -7,39 +8,43 @@ namespace researchDataBrowsingInformationSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Role"] != null)
-            {
-                if (Session["Role"].ToString() == "2")
-                {
-                    if (Session["Right"].ToString() == "4")
-                    {
-                        Response.Redirect("default.aspx");
-                    }
-                    else if (Session["Right"].ToString() == "1")
-                    {
-                        this.Viwe_check.Visible = true;
-                        this.Download.Visible = true;
-                    }
-                    else if (Session["Right"].ToString() == "2")
-                    {
-                        this.Viwe_check.Visible = true;
-                        this.Download.Visible = true;
-                    }
-                    else if (Session["Right"].ToString() == "3")
-                    {
-                        this.Viwe_check.Visible = true;
-                    }
-                    this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["UserName"].ToString();
-                    this.ASPxGridView1.DataBind();
-                }
-                else
-                {
-                }
-            }
-            else
-            {
-                Response.Redirect("default.aspx");
-            }
+            //if (Session["Role"] != null)
+            //{
+            //if (Session["Role"].ToString() == "2")
+            //{
+            //if (Session["Right"].ToString() == "4")
+            //{
+            //    Response.Redirect("default.aspx");
+            //}
+            //else if (Session["Right"].ToString() == "1")
+            //{
+            //    this.Viwe_check.Visible = true;
+            //    this.Download.Visible = true;
+            //}
+            //else if (Session["Right"].ToString() == "2")
+            //{
+            //    this.Viwe_check.Visible = true;
+            //    this.Download.Visible = true;
+            //}
+            //else if (Session["Right"].ToString() == "3")
+            //{
+            //    this.Viwe_check.Visible = true;
+            //}
+            this.SqlDataSource1.SelectParameters[0].DefaultValue = Session["project_name"].ToString() + "%";
+            this.ASPxGridView1.DataBind();
+            //string matchStr = Session["project_name"].ToString();
+            //var columName = ((GridViewDataColumn)ASPxGridView1.Columns[2]).FieldName;
+            //string filterStr = "StartsWith([" + columName + "], '" + matchStr + "')";
+            //ASPxGridView1.FilterExpression = filterStr;
+            //    }
+            //    else
+            //    {
+            //    }
+            //}
+            //else
+            //{
+            //    Response.Redirect("default.aspx");
+            //}
         }
 
         protected void ASPxGridView1_CustomButtonCallback(object sender, DevExpress.Web.ASPxGridViewCustomButtonCallbackEventArgs e)

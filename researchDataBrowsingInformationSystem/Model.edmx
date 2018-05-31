@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DataModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DataModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="biao">
           <Key>
             <PropertyRef Name="StudyInstanceUID" />
@@ -43,6 +43,7 @@
           <Property Name="ID" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Isblock" Type="tinyint" Nullable="false" />
+          <Property Name="IsPass" Type="tinyint" Nullable="false" />
           <Property Name="Remark" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="project_manager">
@@ -52,6 +53,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="project_id" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Use_id" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Right" Type="tinyint" Nullable="false" />
           <Property Name="Remark" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="project_researcher">
@@ -61,7 +63,8 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="project_id" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="User_id" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Remark" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Right" Type="tinyint" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="roleinfo">
           <Key>
@@ -81,7 +84,7 @@
           <Property Name="ID" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Psd" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Role" Type="int" Nullable="false" />
+          <Property Name="Role" Type="tinyint" Nullable="false" />
           <Property Name="Remark" Type="varchar" MaxLength="60" />
         </EntityType>
         <Association Name="FK_project_manager_project">
@@ -157,16 +160,40 @@
             <End Role="project_researcher" EntitySet="project_researcher" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="biao" EntityType="DataModel.biao" />
+          <EntitySet Name="checkinfo" EntityType="DataModel.checkinfo" />
+          <EntitySet Name="project" EntityType="DataModel.project" />
+          <EntitySet Name="project_manager" EntityType="DataModel.project_manager" />
+          <EntitySet Name="project_researcher" EntityType="DataModel.project_researcher" />
+          <EntitySet Name="roleinfo" EntityType="DataModel.roleinfo" />
+          <EntitySet Name="user" EntityType="DataModel.user" />
+          <AssociationSet Name="FK_project_manager_project" Association="DataModel.FK_project_manager_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="project_manager" EntitySet="project_manager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_researcher_project" Association="DataModel.FK_project_researcher_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="project_researcher" EntitySet="project_researcher" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_manager_user" Association="DataModel.FK_project_manager_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="project_manager" EntitySet="project_manager" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_researcher_user" Association="DataModel.FK_project_researcher_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="project_researcher" EntitySet="project_researcher" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="biao">
           <Key>
             <PropertyRef Name="StudyInstanceUID" />
           </Key>
-          <Property Name="StudyInstanceUID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StudyInstanceUID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="PatientID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="PatientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PatientSex" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
@@ -186,72 +213,75 @@
           <Key>
             <PropertyRef Name="Checkid" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Checkid" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DoctorCheckID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Info" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Remark" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Checkid" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DoctorCheckID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Info" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="project">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Isblock" Type="SByte" Nullable="false" />
+          <Property Name="IsPass" Type="SByte" Nullable="false" />
           <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="project_manager" Relationship="Self.FK_project_manager_project" FromRole="project" ToRole="project_manager" />
-          <NavigationProperty Name="project_researcher" Relationship="Self.FK_project_researcher_project" FromRole="project" ToRole="project_researcher" />
+          <NavigationProperty Name="project_manager" Relationship="DataModel.FK_project_manager_project" FromRole="project" ToRole="project_manager" />
+          <NavigationProperty Name="project_researcher" Relationship="DataModel.FK_project_researcher_project" FromRole="project" ToRole="project_researcher" />
         </EntityType>
         <EntityType Name="project_manager">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="project_id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Use_id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="project_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Use_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Right" Type="SByte" Nullable="false" />
           <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="project" Relationship="Self.FK_project_manager_project" FromRole="project_manager" ToRole="project" />
-          <NavigationProperty Name="user" Relationship="Self.FK_project_manager_user" FromRole="project_manager" ToRole="user" />
+          <NavigationProperty Name="project" Relationship="DataModel.FK_project_manager_project" FromRole="project_manager" ToRole="project" />
+          <NavigationProperty Name="user" Relationship="DataModel.FK_project_manager_user" FromRole="project_manager" ToRole="user" />
         </EntityType>
         <EntityType Name="project_researcher">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="project_id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="User_id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="project" Relationship="Self.FK_project_researcher_project" FromRole="project_researcher" ToRole="project" />
-          <NavigationProperty Name="user" Relationship="Self.FK_project_researcher_user" FromRole="project_researcher" ToRole="user" />
+          <Property Name="project_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="User_id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Right" Type="SByte" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="project" Relationship="DataModel.FK_project_researcher_project" FromRole="project_researcher" ToRole="project" />
+          <NavigationProperty Name="user" Relationship="DataModel.FK_project_researcher_user" FromRole="project_researcher" ToRole="user" />
         </EntityType>
         <EntityType Name="roleinfo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Psd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Psd" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Role" Type="Int32" Nullable="false" />
           <Property Name="Right" Type="Int32" Nullable="false" />
-          <Property Name="Remark" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Remark" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Psd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Role" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Psd" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="SByte" Nullable="false" />
           <Property Name="Remark" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="project_manager" Relationship="Self.FK_project_manager_user" FromRole="user" ToRole="project_manager" />
-          <NavigationProperty Name="project_researcher" Relationship="Self.FK_project_researcher_user" FromRole="user" ToRole="project_researcher" />
+          <NavigationProperty Name="project_manager" Relationship="DataModel.FK_project_manager_user" FromRole="user" ToRole="project_manager" />
+          <NavigationProperty Name="project_researcher" Relationship="DataModel.FK_project_researcher_user" FromRole="user" ToRole="project_researcher" />
         </EntityType>
         <Association Name="FK_project_manager_project">
-          <End Role="project" Type="Self.project" Multiplicity="1" />
-          <End Role="project_manager" Type="Self.project_manager" Multiplicity="*" />
+          <End Type="DataModel.project" Role="project" Multiplicity="1" />
+          <End Type="DataModel.project_manager" Role="project_manager" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="project">
               <PropertyRef Name="ID" />
@@ -262,8 +292,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_project_researcher_project">
-          <End Role="project" Type="Self.project" Multiplicity="1" />
-          <End Role="project_researcher" Type="Self.project_researcher" Multiplicity="*" />
+          <End Type="DataModel.project" Role="project" Multiplicity="1" />
+          <End Type="DataModel.project_researcher" Role="project_researcher" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="project">
               <PropertyRef Name="ID" />
@@ -274,8 +304,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_project_manager_user">
-          <End Role="user" Type="Self.user" Multiplicity="1" />
-          <End Role="project_manager" Type="Self.project_manager" Multiplicity="*" />
+          <End Type="DataModel.user" Role="user" Multiplicity="1" />
+          <End Type="DataModel.project_manager" Role="project_manager" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="ID" />
@@ -286,8 +316,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_project_researcher_user">
-          <End Role="user" Type="Self.user" Multiplicity="1" />
-          <End Role="project_researcher" Type="Self.project_researcher" Multiplicity="*" />
+          <End Type="DataModel.user" Role="user" Multiplicity="1" />
+          <End Type="DataModel.project_researcher" Role="project_researcher" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="ID" />
@@ -297,32 +327,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="biao" EntityType="Self.biao" />
-          <EntitySet Name="checkinfo" EntityType="Self.checkinfo" />
-          <EntitySet Name="project" EntityType="Self.project" />
-          <EntitySet Name="project_manager" EntityType="Self.project_manager" />
-          <EntitySet Name="project_researcher" EntityType="Self.project_researcher" />
-          <EntitySet Name="roleinfo" EntityType="Self.roleinfo" />
-          <EntitySet Name="user" EntityType="Self.user" />
-          <AssociationSet Name="FK_project_manager_project" Association="Self.FK_project_manager_project">
-            <End Role="project" EntitySet="project" />
-            <End Role="project_manager" EntitySet="project_manager" />
-          </AssociationSet>
-          <AssociationSet Name="FK_project_researcher_project" Association="Self.FK_project_researcher_project">
-            <End Role="project" EntitySet="project" />
-            <End Role="project_researcher" EntitySet="project_researcher" />
-          </AssociationSet>
-          <AssociationSet Name="FK_project_manager_user" Association="Self.FK_project_manager_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="project_manager" EntitySet="project_manager" />
-          </AssociationSet>
-          <AssociationSet Name="FK_project_researcher_user" Association="Self.FK_project_researcher_user">
-            <End Role="user" EntitySet="user" />
-            <End Role="project_researcher" EntitySet="project_researcher" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -331,86 +336,89 @@
           <EntitySetMapping Name="biao">
             <EntityTypeMapping TypeName="DataModel.biao">
               <MappingFragment StoreEntitySet="biao">
-                <ScalarProperty Name="StudyInstanceUID" ColumnName="StudyInstanceUID" />
-                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
-                <ScalarProperty Name="PatientSex" ColumnName="PatientSex" />
-                <ScalarProperty Name="PatientAge" ColumnName="PatientAge" />
-                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-                <ScalarProperty Name="OperatorsName" ColumnName="OperatorsName" />
-                <ScalarProperty Name="PatientBirthDate" ColumnName="PatientBirthDate" />
-                <ScalarProperty Name="AccessionNumber" ColumnName="AccessionNumber" />
-                <ScalarProperty Name="StudyID" ColumnName="StudyID" />
-                <ScalarProperty Name="BodyPartExamined" ColumnName="BodyPartExamined" />
-                <ScalarProperty Name="StudyDate" ColumnName="StudyDate" />
-                <ScalarProperty Name="StudyTime" ColumnName="StudyTime" />
-                <ScalarProperty Name="Modality" ColumnName="Modality" />
                 <ScalarProperty Name="StudyDescription" ColumnName="StudyDescription" />
+                <ScalarProperty Name="Modality" ColumnName="Modality" />
+                <ScalarProperty Name="StudyTime" ColumnName="StudyTime" />
+                <ScalarProperty Name="StudyDate" ColumnName="StudyDate" />
+                <ScalarProperty Name="BodyPartExamined" ColumnName="BodyPartExamined" />
+                <ScalarProperty Name="StudyID" ColumnName="StudyID" />
+                <ScalarProperty Name="AccessionNumber" ColumnName="AccessionNumber" />
+                <ScalarProperty Name="PatientBirthDate" ColumnName="PatientBirthDate" />
+                <ScalarProperty Name="OperatorsName" ColumnName="OperatorsName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="PatientAge" ColumnName="PatientAge" />
+                <ScalarProperty Name="PatientSex" ColumnName="PatientSex" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="StudyInstanceUID" ColumnName="StudyInstanceUID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="checkinfo">
             <EntityTypeMapping TypeName="DataModel.checkinfo">
               <MappingFragment StoreEntitySet="checkinfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Checkid" ColumnName="Checkid" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="DoctorCheckID" ColumnName="DoctorCheckID" />
-                <ScalarProperty Name="Info" ColumnName="Info" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="DoctorCheckID" ColumnName="DoctorCheckID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Checkid" ColumnName="Checkid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="project">
             <EntityTypeMapping TypeName="DataModel.project">
               <MappingFragment StoreEntitySet="project">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Isblock" ColumnName="Isblock" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+                <ScalarProperty Name="Isblock" ColumnName="Isblock" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="project_manager">
             <EntityTypeMapping TypeName="DataModel.project_manager">
               <MappingFragment StoreEntitySet="project_manager">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="project_id" ColumnName="project_id" />
-                <ScalarProperty Name="Use_id" ColumnName="Use_id" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Right" ColumnName="Right" />
+                <ScalarProperty Name="Use_id" ColumnName="Use_id" />
+                <ScalarProperty Name="project_id" ColumnName="project_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="project_researcher">
             <EntityTypeMapping TypeName="DataModel.project_researcher">
               <MappingFragment StoreEntitySet="project_researcher">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="project_id" ColumnName="project_id" />
-                <ScalarProperty Name="User_id" ColumnName="User_id" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Right" ColumnName="Right" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="project_id" ColumnName="project_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="roleinfo">
             <EntityTypeMapping TypeName="DataModel.roleinfo">
               <MappingFragment StoreEntitySet="roleinfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Psd" ColumnName="Psd" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
-                <ScalarProperty Name="Right" ColumnName="Right" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Right" ColumnName="Right" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Psd" ColumnName="Psd" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user">
             <EntityTypeMapping TypeName="DataModel.user">
               <MappingFragment StoreEntitySet="user">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Psd" ColumnName="Psd" />
-                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Psd" ColumnName="Psd" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -15,11 +15,11 @@ namespace researchDataBrowsingInformationSystem
                 }
                 else if (Session["Role"].ToString() == "2")
                 {
-                    if (Session["Right"].ToString() == "4") { }
-                    else
-                    {
-                        mainIfr.Attributes.Add("src", "biao.aspx");
-                    }
+                    //if (Session["Right"].ToString() == "4") { }
+                    //else
+                    //{
+                    //    mainIfr.Attributes.Add("src", "biao.aspx");
+                    //}
                 }
             }
             //确保页面是第一次被访问
@@ -48,16 +48,16 @@ namespace researchDataBrowsingInformationSystem
                 }
                 else if (Session["Role"].ToString() == "2")
                 {
-                    if (Session["Right"].ToString() == "4")
-                    {
-                        //btnPatientInfo.Visible = false;
-                        //btnReloinfo.Visible = false;
-                    }
-                    else
-                    {
-                        //btnReloinfo.Visible = false;
-                        //btnPatientInfo.Visible = true;
-                    }
+                    //if (Session["Right"].ToString() == "4")
+                    //{
+                    //    //btnPatientInfo.Visible = false;
+                    //    //btnReloinfo.Visible = false;
+                    //}
+                    //else
+                    //{
+                    //    //btnReloinfo.Visible = false;
+                    //    //btnPatientInfo.Visible = true;
+                    //}
                 }
             }
             else

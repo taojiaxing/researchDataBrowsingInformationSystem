@@ -131,13 +131,17 @@
                         <a href="#" class="Link" onclick="show('First_one')" style="color: #FFFFFF">用户管理</a>
                         <div id="First_one" style="display: block;">
                             <a href="../userInfo.aspx" target="mainIfr" class="List">用户管理</a>
+
                             <%--<a href="#" class="List">用户信息</a>--%>
                         </div>
                         <a href="#" class="Link" onclick="show('Second_one')" style="color: #FFFFFF">项目管理</a>
                         <div id="Second_one" style="display: none;">
-                            <a href="../viewProject.aspx" target="mainIfr" class="List">查看项目数据</a>
+                            <a href="../projectManage.aspx" target="mainIfr" class="List">管理项目数据</a>
+                            <a href="../viewProject.aspx" target="mainIfr" class="List">查看项目扫描数据</a>
                             <a href="../addProject.aspx" target="mainIfr" class="List">添加项目</a>
-                            <a href="#" class="List">管理项目参与者</a>
+                            <a href="../projectManager.aspx" target="mainIfr" class="List">管理项目负责人</a>
+                            <a href="../projectResearcher.aspx" target="mainIfr" class="List">管理项目参与者</a>
+                            <a href="../addResearcher.aspx" target="mainIfr" class="List">添加参与者</a>
                             <%--<a href="#" class="List">Three</a> --%>
                         </div>
                         <a href="#" class="Link" onclick="show('Third_one')" style="color: #FFFFFF">扫描数据管理</a>

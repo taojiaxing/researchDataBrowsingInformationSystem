@@ -88,6 +88,7 @@ namespace researchDataBrowsingInformationSystem
                 var userDetails = db.user.Where(x => x.ID == txbUserName.Text && x.Psd == txbUserPassword.Text).FirstOrDefault();
                 if (userDetails != null)
                 {
+                    Session["ID"] = userDetails.ID;
                     Session["UserName"] = userDetails.Name;
                     Session["Message"] = "登录成功！";
                     Session["Role"] = userDetails.Role;

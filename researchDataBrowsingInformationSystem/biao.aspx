@@ -67,12 +67,12 @@
                 VALUES   (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
                 OldValuesParameterFormatString="original_{0}"
                 ProviderName="<%$ ConnectionStrings:testConnectionString.ProviderName %>"
-                SelectCommand="SELECT * FROM biao where OperatorsName = ?"
+                SelectCommand="SELECT * FROM biao where PatientID like ?"
                 UpdateCommand="UPDATE  biao SET PatientID = ?, PatientName = ?, PatientSex = ?, PatientAge = ?,
                 FilePath = ?, OperatorsName = ?, PatientBirthDate = ?, AccessionNumber = ?, StudyID = ?, BodyPartExamined = ?,
                 StudyDate = ?, StudyTime = ?, Modality = ?, StudyDescription = ? WHERE(StudyInstanceUID = ?)">
                 <SelectParameters>
-                    <asp:Parameter Name="OperatorsName" Type="String" />
+                    <asp:Parameter Name="PatientID" Type="String" />
                 </SelectParameters>
                 <DeleteParameters>
                     <asp:Parameter Name="original_StudyInstanceUID" Type="String" />
@@ -145,7 +145,7 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <asp:Button ID="Viwe_check" runat="server" OnClick="Viwe_check_Click" OnClientClick="Viwe_checkClick()" Text="查看检查结果" Visible="False" />
-                    <asp:Button ID="Download" runat="server" OnClick="Download_Click" OnClientClick="DownloadClick()" Text="查看扫描结果" Visible="False" />
+                    <asp:Button ID="Download" runat="server" OnClick="Download_Click" OnClientClick="DownloadClick()" Text="查看扫描结果" Visible="true" />
                 </ContentTemplate>
             </asp:UpdatePanel>
             <dx:ASPxGridView ID="ASPxGridView1" runat="server"

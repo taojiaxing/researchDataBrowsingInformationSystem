@@ -9,7 +9,7 @@ namespace researchDataBrowsingInformationSystem
     {
         private string _ftpIP = "127.0.0.1";
         private string _dir = "";
-        private string _defalutDir = @"H:\MRI_Data\";
+        private string _defalutDir = @"F:\MRI_Data\";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -124,7 +124,7 @@ namespace researchDataBrowsingInformationSystem
             {
                 CustomProvider.Dir = Session["path"].ToString();
                 //Session.Remove("path");
-                if (Session["Right"].ToString() == "1" || Session["Role"].ToString() == "1")
+                if (/*Session["Right"].ToString() == "1" || */Session["Role"].ToString() == "0")
                 {
                     this.DownloadDirBtn.Visible = true;
                 }

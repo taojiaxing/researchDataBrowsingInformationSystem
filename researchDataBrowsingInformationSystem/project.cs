@@ -24,6 +24,7 @@ namespace researchDataBrowsingInformationSystem
         public string ID { get; set; }
         public string Name { get; set; }
         public sbyte Isblock { get; set; }
+        public sbyte IsPass { get; set; }
         public string Remark { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
