@@ -31,7 +31,7 @@
                     <td style="width: 12%; text-align: center">
 
                         <img alt="" class="auto-style2" src="img/untitled.bmp" /></td>
-                    <td style="font-weight: bold; font-size: 20px; color: #FFFFFF; font-family: 'Bell MT';" class="auto-style1">科研数据浏览信息系统——华西核磁共振研究中心HMRRC<br />
+                    <td style="font-weight: bold; font-size: 26px; color: #FFFFFF; font-family: 'Bell MT';" class="auto-style1">科研数据浏览信息系统——华西核磁共振研究中心HMRRC<br />
                     </td>
                     <td style="vertical-align: middle; text-align: left"></td>
                 </tr>
