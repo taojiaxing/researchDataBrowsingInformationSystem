@@ -3,21 +3,21 @@ using System;
 
 namespace researchDataBrowsingInformationSystem
 {
-    public partial class reloInfo : System.Web.UI.Page
+    public partial class userInfo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Role"] != null)
-            {
-                if (Session["Role"].ToString() != "0")
-                {
-                    Response.Redirect("default.aspx");
-                }
-            }
-            else
-            {
-                Response.Redirect("default.aspx");
-            }
+            //if (Session["Role"] != null)
+            //{
+            //    if (Session["Role"].ToString() != "0")
+            //    {
+            //        Response.Redirect("default.aspx");
+            //    }
+            //}
+            //else
+            //{
+            //    Response.Redirect("default.aspx");
+            //}
         }
 
         protected void ASPxGridView1_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)

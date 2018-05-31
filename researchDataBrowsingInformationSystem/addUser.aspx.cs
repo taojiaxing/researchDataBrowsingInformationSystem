@@ -18,9 +18,13 @@ namespace researchDataBrowsingInformationSystem
                     us.ID = TextBox1.Text.Trim();
                     us.Name = TextBox2.Text.Trim();
                     us.Psd = TextBox3.Text.Trim();
+                    us.Role = 2;
                     db.user.Add(us);
                     db.SaveChanges();
                 }
+                TextBox1.Text = "";
+                TextBox2.Text = "";
+                TextBox3.Text = "";
             }
         }
     }

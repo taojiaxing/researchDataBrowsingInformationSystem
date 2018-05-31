@@ -130,8 +130,8 @@
                     <div id="left_nav">
                         <a href="#" class="Link" onclick="show('First_one')" style="color: #FFFFFF">用户管理</a>
                         <div id="First_one" style="display: block;">
-                            <a href="../addUser.aspx" target="mainIfr" class="List">添加用户</a>
-                            <a href="#" class="List">用户信息</a>
+                            <a href="../userInfo.aspx" target="mainIfr" class="List">用户管理</a>
+                            <%--<a href="#" class="List">用户信息</a>--%>
                         </div>
                         <a href="#" class="Link" onclick="show('Second_one')" style="color: #FFFFFF">项目管理</a>
                         <div id="Second_one" style="display: none;">

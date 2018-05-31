@@ -133,7 +133,7 @@
     </Content>
     <Content Include="Newproject.aspx" />
     <Content Include="projectManage.aspx" />
-    <Content Include="reloInfo.aspx" />
+    <Content Include="userInfo.aspx" />
     <Content Include="viewProject.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -251,12 +251,12 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reloInfo.aspx.cs">
-      <DependentUpon>reloInfo.aspx</DependentUpon>
+    <Compile Include="userInfo.aspx.cs">
+      <DependentUpon>userInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="reloInfo.aspx.designer.cs">
-      <DependentUpon>reloInfo.aspx</DependentUpon>
+    <Compile Include="userInfo.aspx.designer.cs">
+      <DependentUpon>userInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="roleinfo.cs">
       <DependentUpon>Model.tt</DependentUpon>

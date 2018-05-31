@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reloInfo.aspx.cs" Inherits="researchDataBrowsingInformationSystem.reloInfo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="userInfo.aspx.cs" Inherits="researchDataBrowsingInformationSystem.userInfo" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Xpo.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Xpo" TagPrefix="dx" %>
@@ -57,7 +57,7 @@
                             </Items>
                         </PropertiesComboBox>
                     </dx:GridViewDataComboBoxColumn>
-                    <dx:GridViewDataTextColumn Caption="用户ID号" FieldName="ID" VisibleIndex="0" ReadOnly="True">
+                    <dx:GridViewDataTextColumn Caption="用户ID号" FieldName="ID" VisibleIndex="0">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn Caption="用户姓名" FieldName="Name" VisibleIndex="1">
                     </dx:GridViewDataTextColumn>
