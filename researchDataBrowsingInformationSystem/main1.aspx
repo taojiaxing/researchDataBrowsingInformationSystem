@@ -15,10 +15,8 @@
             else {
                 var first_one = document.getElementById("First_one");
                 var second_one = document.getElementById("Second_one");
-                var third_one = document.getElementById("Third_one");
                 first_one.style.display = "none";
                 second_one.style.display = "none";
-                third_one.style.display = "none";
                 var showd = document.getElementById(arguments[0]);
                 showd.style.display = "block";
             }
@@ -130,9 +128,13 @@
                     <div id="left_nav">
                         <a href="#" class="Link" onclick="show('First_one')" style="color: #FFFFFF">用户管理</a>
                         <div id="First_one" style="display: block;">
-                            <a href="../viewProject.aspx" target="mainIfr" class="List">查看项目扫描数据</a>
-
                             <a href="../addResearcher.aspx" target="mainIfr" class="List">添加参与者</a>
+                            <a href="../viewMember.aspx" target="mainIfr" class="List">管理项目参与者</a>
+                        </div>
+                        <a href="#" class="Link" onclick="show('Second_one')" style="color: #FFFFFF">项目管理</a>
+                        <div id="Second_one" style="display: none;">
+                            <a href="../viewProject.aspx" target="mainIfr" class="List">查看项目扫描数据</a>
+                            <%--<a href="#" class="List">Three</a> --%>
                         </div>
                     </div>
                 </div>

@@ -7,21 +7,6 @@ namespace researchDataBrowsingInformationSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Role"] != null)
-            {
-                if (Session["Role"].ToString() == "1")
-                {
-                    mainIfr.Attributes.Add("src", "biaoAdmin.aspx");
-                }
-                else if (Session["Role"].ToString() == "2")
-                {
-                    //if (Session["Right"].ToString() == "4") { }
-                    //else
-                    //{
-                    //    mainIfr.Attributes.Add("src", "biao.aspx");
-                    //}
-                }
-            }
             //确保页面是第一次被访问
             if (!Page.IsPostBack)
             {

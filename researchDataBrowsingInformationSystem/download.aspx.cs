@@ -124,7 +124,7 @@ namespace researchDataBrowsingInformationSystem
             {
                 CustomProvider.Dir = Session["path"].ToString();
                 //Session.Remove("path");
-                if (/*Session["Right"].ToString() == "1" || */Session["Role"].ToString() == "0" || Session["Role"].ToString() == "1")
+                if (Session["Role"].ToString() == "0" || Session["Right"].ToString() == "1")
                 {
                     this.DownloadDirBtn.Visible = true;
                 }

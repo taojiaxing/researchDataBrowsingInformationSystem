@@ -86,8 +86,17 @@ namespace researchDataBrowsingInformationSystem
             using (testEntities db = new testEntities())
             {
                 var userDetails = db.user.Where(x => x.ID == txbUserName.Text && x.Psd == txbUserPassword.Text).FirstOrDefault();
+                var userRight = db.project_manager.Where(x => x.Use_id == userDetails.ID).FirstOrDefault();
                 if (userDetails != null)
                 {
+                    if (userRight != null)
+                    {
+                        Session["Right"] = userRight.Right;
+                    }
+                    else
+                    {
+                        Session["Right"] = 0;
+                    }
                     Session["ID"] = userDetails.ID;
                     Session["UserName"] = userDetails.Name;
                     Session["Message"] = "登录成功！";

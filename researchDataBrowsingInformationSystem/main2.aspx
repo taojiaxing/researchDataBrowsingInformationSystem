@@ -14,11 +14,7 @@
             }
             else {
                 var first_one = document.getElementById("First_one");
-                var second_one = document.getElementById("Second_one");
-                var third_one = document.getElementById("Third_one");
                 first_one.style.display = "none";
-                second_one.style.display = "none";
-                third_one.style.display = "none";
                 var showd = document.getElementById(arguments[0]);
                 showd.style.display = "block";
             }
@@ -128,7 +124,7 @@
                     <asp:Button ID="btnReloinfo" runat="server" Text="用户管理" Width="100%" OnClick="Reloinfo_Click" />
                     <br />--%>
                     <div id="left_nav">
-                        <a href="#" class="Link" onclick="show('First_one')" style="color: #FFFFFF">用户管理</a>
+                        <a href="#" class="Link" onclick="show('First_one')" style="color: #FFFFFF">项目管理</a>
                         <div id="First_one" style="display: block;">
                             <a href="../viewProject.aspx" target="mainIfr" class="List">查看项目扫描数据</a>
                         </div>

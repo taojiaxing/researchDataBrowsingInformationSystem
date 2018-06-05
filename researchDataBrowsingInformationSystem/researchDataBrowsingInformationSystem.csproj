@@ -136,9 +136,12 @@
     </Content>
     <Content Include="Newproject.aspx" />
     <Content Include="projectManage.aspx" />
+    <Content Include="projectResearcherByID.aspx" />
     <Content Include="projectResearcher.aspx" />
     <Content Include="projectManager.aspx" />
     <Content Include="userInfo.aspx" />
+    <Content Include="viewMember.aspx" />
+    <Content Include="viewProjectAdmin.aspx" />
     <Content Include="viewProject.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -270,6 +273,13 @@
     <Compile Include="projectManage.aspx.designer.cs">
       <DependentUpon>projectManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="projectResearcherByID.aspx.cs">
+      <DependentUpon>projectResearcherByID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="projectResearcherByID.aspx.designer.cs">
+      <DependentUpon>projectResearcherByID.aspx</DependentUpon>
+    </Compile>
     <Compile Include="projectResearcher.aspx.cs">
       <DependentUpon>projectResearcher.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,6 +313,20 @@
     </Compile>
     <Compile Include="user.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="viewMember.aspx.cs">
+      <DependentUpon>viewMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewMember.aspx.designer.cs">
+      <DependentUpon>viewMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewProjectAdmin.aspx.cs">
+      <DependentUpon>viewProjectAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewProjectAdmin.aspx.designer.cs">
+      <DependentUpon>viewProjectAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="viewProject.aspx.cs">
       <DependentUpon>viewProject.aspx</DependentUpon>
